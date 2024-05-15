@@ -42,8 +42,8 @@ public class Driver {
                     driver = new ChromeDriver();
                     Logger.info("Driver default Chrome");
                   ChromeOptions chromeOptions = new ChromeOptions();
-                   chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-                   Logger.info("Chrome option is eager");
+                   chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+                   Logger.info("Chrome option is normal");
                    chromeOptions.setPageLoadTimeout(Duration.ofSeconds(GlobalVars.DefaultExplicitTimeOut));
                    Logger.info("Chrome set page load timeout "+ GlobalVars.DefaultExplicitTimeOut + " second");
             }
