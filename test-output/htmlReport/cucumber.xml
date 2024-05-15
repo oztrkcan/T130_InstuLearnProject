@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="98.465" tests="16" skipped="0" failures="0" errors="0">
+<testcase classname="yeni" name="yeni" time="11.289">
+<system-out><![CDATA[
+Given i click on login link on Login page...................................passed
+And i enter "muammer.teacher@instulearn.com" for login......................passed
+And i enter "Learn.2504" password for login.................................passed
+When i click on the login Button for login..................................passed
+Then i must be login........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new" time="5.876">
+<system-out><![CDATA[
+Given i m on Dashboard with "muammer.teacher@instulearn.com" email..........passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new" time="5.62">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "alican" email...................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new" time="5.365">
+<system-out><![CDATA[
+Given i m on Dashboard as a "student" with "muammer" email..................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.1" time="5.768">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "alican" email...................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.2" time="6.19">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "batuhan" email..................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.3" time="6.441">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "ahmet" email....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.4" time="6.467">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "arzu" email.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.5" time="5.951">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "banu" email.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.6" time="5.313">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "burak" email....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.7" time="5.626">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "derya" email....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.8" time="5.596">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "kubra" email....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.9" time="5.513">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "nehir" email....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.10" time="5.982">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "muammer" email..................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.11" time="5.361">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "orkun" email....................passed
+]]></system-out>
+</testcase>
+<testcase classname="yeni" name="new - Example #1.12" time="5.441">
+<system-out><![CDATA[
+Given i m on Dashboard as a "teacher" with "ugur" email.....................passed
+]]></system-out>
+</testcase>
+</testsuite>

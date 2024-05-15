@@ -2,6 +2,13 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/test/java/log/
+!**/src/test/java/runner/
+!**/src/test/java/hooks/
+src/test/java/driver/
+
+
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

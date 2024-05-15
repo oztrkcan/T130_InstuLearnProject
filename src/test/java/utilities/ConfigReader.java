@@ -5,10 +5,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-
     static Properties properties;
 
-    static {// static blok herseyden once calisir
+    static {
 
         String dosyaYolu= "configuration.properties";
         try {
@@ -24,10 +23,8 @@ public class ConfigReader {
     }
 
     public static String getProperty(String key){
-
         return properties.getProperty(key);
 
     }
-
 
 }
