@@ -1,87 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="98.465" tests="16" skipped="0" failures="0" errors="0">
-<testcase classname="yeni" name="yeni" time="11.289">
+<testsuite name="Cucumber" time="14.756" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Have a Dashboard page" name="Check a dashboard link on home page" time="14.237">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class,'swal2-container swal2-center')]&quot;}
+  (Session info: chrome=124.0.6367.158)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1127fef01f0e0806a1666bbf92910e5f, findElement {value=//div[contains(@class,'swal2-container swal2-center')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.158, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50696}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50696/devtoo..., se:cdpVersion: 124.0.6367.158, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1127fef01f0e0806a1666bbf92910e5f">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class,'swal2-container swal2-center')]"}
+  (Session info: chrome=124.0.6367.158)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1127fef01f0e0806a1666bbf92910e5f, findElement {value=//div[contains(@class,'swal2-container swal2-center')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.158, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\GLOBAL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50696}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50696/devtoo..., se:cdpVersion: 124.0.6367.158, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1127fef01f0e0806a1666bbf92910e5f
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.isDisplayed(Unknown Source)
+	at stepdefinitions.HeaderPageSteps.theEnableOfflineStatusButtonAppears(HeaderPageSteps.java:35)
+	at ✽.The Enable offline status button appears(file:///C:/Users/GLOBAL%20PC/IdeaProjects/T130_InstuLearnProject/src/test/resources/features/US_019.feature:8)
+]]>
+</failure>
 <system-out><![CDATA[
-Given i click on login link on Login page...................................passed
-And i enter "muammer.teacher@instulearn.com" for login......................passed
-And i enter "Learn.2504" password for login.................................passed
-When i click on the login Button for login..................................passed
-Then i must be login........................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new" time="5.876">
-<system-out><![CDATA[
-Given i m on Dashboard with "muammer.teacher@instulearn.com" email..........passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new" time="5.62">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "alican" email...................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new" time="5.365">
-<system-out><![CDATA[
-Given i m on Dashboard as a "student" with "muammer" email..................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.1" time="5.768">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "alican" email...................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.2" time="6.19">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "batuhan" email..................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.3" time="6.441">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "ahmet" email....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.4" time="6.467">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "arzu" email.....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.5" time="5.951">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "banu" email.....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.6" time="5.313">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "burak" email....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.7" time="5.626">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "derya" email....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.8" time="5.596">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "kubra" email....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.9" time="5.513">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "nehir" email....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.10" time="5.982">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "muammer" email..................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.11" time="5.361">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "orkun" email....................passed
-]]></system-out>
-</testcase>
-<testcase classname="yeni" name="new - Example #1.12" time="5.441">
-<system-out><![CDATA[
-Given i m on Dashboard as a "teacher" with "ugur" email.....................passed
+Given i m on Homepage as "teacher" with "kubra" email.......................passed
+And i click My Profile icon on Header.......................................passed
+When I click dashboard link on home page....................................passed
+Then I access dashboard page................................................passed
+Then The Enable offline status button appears...............................failed
+Then Activate offline status button is active is verified...................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

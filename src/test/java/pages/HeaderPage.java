@@ -13,7 +13,8 @@ public class HeaderPage extends BasePage {
     // Home Link
     @FindBy(linkText = "Home")
     public WebElement homeLinkInHeader;
-    public void clickHomeLinkInHeader(){
+
+    public void clickHomeLinkInHeader() {
         click(homeLinkInHeader);
     }
 
@@ -53,18 +54,32 @@ public class HeaderPage extends BasePage {
     @FindBy(css = "[class='rounded-circle']")
     public WebElement profileLogoInHeader;
 
-    public void clickProfileLogoInHeader(){
+    public void clickProfileLogoInHeader() {
         click(profileLogoInHeader);
     }
 
     //Profile Link
     @FindBy(xpath = "//span[text()='Profile']")
     public WebElement profileLinkInHeader;
+
     public boolean isDisplayedMyProfileLink() {
-    return profileLinkInHeader.isDisplayed();
+        return profileLinkInHeader.isDisplayed();
     }
 
     public boolean isEnabledMyProfileLink() {
         return profileLinkInHeader.isEnabled();
     }
+
+    //Dashboard link
+    @FindBy(xpath = "//a[@href='/panel']")
+    public WebElement dashboardLinkHomeHeader;
+
+    public void clickDashboardLink() {
+        click(dashboardLinkHomeHeader);
+    }
+
+    @FindBy(xpath = "//div[contains(@class,'swal2-container swal2-center')]")
+    public WebElement activateOfflineStatusButton;
 }
+
+
