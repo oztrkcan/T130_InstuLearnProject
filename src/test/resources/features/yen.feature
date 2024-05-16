@@ -7,7 +7,7 @@
       When i click on the login Button for login
       Then i must be login
     @wip
-    Scenario: new
+    Scenario: new n
       Given i m on Dashboard with "muammer.teacher@instulearn.com" email
 
     Scenario: new
