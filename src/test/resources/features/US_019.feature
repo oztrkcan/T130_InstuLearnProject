@@ -7,3 +7,4 @@ Feature: Have a Dashboard page
     Then  I access dashboard page
     Then  The Enable offline status button appears
     Then  Activate offline status button is active is verified
+    And
