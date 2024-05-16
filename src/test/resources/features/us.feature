@@ -14,7 +14,7 @@
       Given i m on Dashboard as a "teacher" with "alican" email
 
   @wip
-    Scenario: new
+    Scenario: new nehir
       Given i m on Dashboard as a "student" with "muammer" email
 
 
