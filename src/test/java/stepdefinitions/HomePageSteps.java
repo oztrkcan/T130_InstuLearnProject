@@ -4,7 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.HeaderPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.TestData.TestDataBase;
@@ -63,19 +62,30 @@ public class HomePageSteps extends BaseStep {
         homePage.clickReserveAMeeting();
     }
 
-    @Then("verify {string} is visible in the body section")
-    public void verifyIsVisibleInTheBodySection(String arg0) {
+    @Then("verify Join as instructor section  is visible in the body section")
+    public void verifyJoinAsInstructorSectionIsVisibleInTheBodySection() {
         Assert.assertTrue(homePage.isDisplayedJoinAsInstructorSection());
     }
 
-    @When("Click on the {string} section")
-    public void clickOnTheSection(String arg0) {
+    @When("Click on the Join as instructor section")
+    public void clickOnTheJoinAsInstructorSection() {
         homePage.clickJoinAsInstructorSection();
     }
 
-    @Then("Verifies accessed the login page")
-    public void verifiesAccessedTheLoginPage() {
-        Assert.assertEquals(TestDataBase.loginPageUrl,driver.getCurrentUrl());
+    @Then("Verifies accessed the login page in the Home Page")
+    public void verifiesAccessedTheLoginPageInTheHomePage() {
+        Assert.assertEquals(TestDataBase.loginPageUrl, driver.getCurrentUrl());
     }
 
+    @Then("I see the title of the Store Products and Slider on the Home Page")
+    public void iSeeTheTitleOfTheStoreProductsAndSliderOnTheHomePage() {
+        Assert.assertTrue(homePage.isDisplayedStoreProductTitleText());
+    }
+
+    @Then("I see  price, like score, add to cart icon on product cards on the Home Page")
+    public void iSeePriceLikeScoreAddToCartIconOnProductCardsOnTheHomePage() {
+       Assert.assertTrue(homePage.isDisplayedOnCard(homePage.sliderlist,homePage.likeProduct));
+       Assert.assertTrue(homePage.isDisplayedOnCard(homePage.sliderlist,homePage.priceOfProducts));
+       Assert.assertTrue(homePage.isDisplayedHoverOnCard(homePage.allProduct,homePage.addToCartButton));
+    }
 }

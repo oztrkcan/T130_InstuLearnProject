@@ -17,7 +17,7 @@ Feature: Review the instructors and create an appointment.
     Then I can see the rating score of Instrcotrs in the card
     Then I can see the Reserve a Meeting button in the card
 
-  @mua
+
   Scenario Outline: TC_04_US_12 : I can create an appointment with Instructor.
     When I click the Reserve a meeting for Instructors in the card
     And I reserve a Day and time which is not disabled

@@ -16,12 +16,10 @@ public class ConfigReader {
             properties= new Properties();
             properties.load(fis);
 
-
         } catch (IOException e) {
             System.out.println("properties dosyasi okunamadi");
         }
     }
-
     public static String getProperty(String key){
         return properties.getProperty(key);
 

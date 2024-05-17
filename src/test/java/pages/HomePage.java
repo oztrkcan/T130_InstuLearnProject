@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.ReusableMethods;
 import utilities.TestData.TestDataBase;
 
 import java.util.List;
@@ -76,15 +75,88 @@ public class HomePage extends BasePage {
 
     ///////////////////////////////////VİSİTOR////////////////////////////////
     //Home page body>>Join us as an Instructor and start teaching link
-    @FindBy(xpath = "//img[@class='img-cover rounded-sm']")
+    @FindBy(xpath = "//img[@alt='Home - Join as instructor']")
     public WebElement JoinasInstructorSection;
 
+    @FindBy(xpath = "//*[.='Discounted Courses']")
+    public WebElement discountedCoursesTitle;
+
     public boolean isDisplayedJoinAsInstructorSection(){
-        ReusableMethods.scrollWithJs(JoinasInstructorSection);
-        scrollToElementWithAction(JoinasInstructorSection);
+        scrollWithJs(discountedCoursesTitle);
         return JoinasInstructorSection.isDisplayed();}
     public void clickJoinAsInstructorSection(){
-        scrollToElementWithAction(JoinasInstructorSection);
+        scrollToElementWithAction(discountedCoursesTitle);
         click(JoinasInstructorSection);}
+
+
+    /////////////////////////////////////////===========Store Products=============////////////////////////////////////////
+
+    // Store Products Title
+    @FindBy(xpath = "//*[.='Store Products']")
+    public WebElement storeProductsTitleText;
+
+    // Store Product Slider
+    @FindBy(className = "features-swiper-pagination")
+    public WebElement sliderOfStoreProducts;
+
+    public boolean isDisplayedStoreProductTitleText(){
+        boolean result= false;
+        if(sliderOfStoreProducts.isDisplayed() & storeProductsTitleText.isDisplayed()){
+            result = true;
+        }
+        return result;
+    }
+    // Slider
+    @FindBy(xpath = "//div[contains(@class,'swiper-pagination new-products-swiper-pagination')]//span")
+    public List<WebElement> sliderlist;
+
+
+    //Price of Products
+    @FindBy(xpath = "//*[@class='product-card-body']//*[@class='product-price-box mt-25']")
+    public List<WebElement> priceOfProducts;
+
+    //Add to cart Button
+    @FindBy(xpath = "//*[@class='product-card']//div[@class='hover-card-action']")
+    public List<WebElement> addToCartButton;
+
+    //Like of Product
+    @FindBy(xpath = "//*[@class='product-card']//*[@class='badge badge-primary ml-10']")
+    public List<WebElement> likeProduct;
+
+    //All product image
+    @FindBy(css = "[class='product-card']")
+    public List<WebElement> allProduct;
+
+    public boolean isDisplayedOnCard(List<WebElement> slider,List<WebElement> elementList) {
+        boolean result= false;
+
+        for (WebElement slide : slider) {
+            click(slide);
+            for (WebElement element: elementList){
+                if (element.isDisplayed()){
+                    result=true;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    public boolean isDisplayedHoverOnCard(List<WebElement> cardList, List<WebElement>elementList){
+        boolean result= false;
+        for (WebElement card : cardList){
+            if (card.isDisplayed()){
+                    hover(card);
+                    for (WebElement element : elementList){
+                        if (element.isDisplayed()){
+                            result=true;
+                        }
+                    }
+            }
+
+        }
+        return result;
+    }
+
 
 }
