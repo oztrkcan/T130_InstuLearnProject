@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.ReusableMethods;
 import utilities.TestData.TestDataBase;
 
 import java.util.List;
@@ -72,5 +73,18 @@ public class HomePage extends BasePage {
     public void clickReserveAMeeting(){
         click(reserveMeetings.getFirst());
     }
+
+    ///////////////////////////////////VİSİTOR////////////////////////////////
+    //Home page body>>Join us as an Instructor and start teaching link
+    @FindBy(xpath = "//img[@class='img-cover rounded-sm']")
+    public WebElement JoinasInstructorSection;
+
+    public boolean isDisplayedJoinAsInstructorSection(){
+        ReusableMethods.scrollWithJs(JoinasInstructorSection);
+        scrollToElementWithAction(JoinasInstructorSection);
+        return JoinasInstructorSection.isDisplayed();}
+    public void clickJoinAsInstructorSection(){
+        scrollToElementWithAction(JoinasInstructorSection);
+        click(JoinasInstructorSection);}
 
 }

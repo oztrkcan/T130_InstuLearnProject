@@ -63,6 +63,19 @@ public class HomePageSteps extends BaseStep {
         homePage.clickReserveAMeeting();
     }
 
+    @Then("verify {string} is visible in the body section")
+    public void verifyIsVisibleInTheBodySection(String arg0) {
+        Assert.assertTrue(homePage.isDisplayedJoinAsInstructorSection());
+    }
 
+    @When("Click on the {string} section")
+    public void clickOnTheSection(String arg0) {
+        homePage.clickJoinAsInstructorSection();
+    }
+
+    @Then("Verifies accessed the login page")
+    public void verifiesAccessedTheLoginPage() {
+        Assert.assertEquals(TestDataBase.loginPageUrl,driver.getCurrentUrl());
+    }
 
 }
