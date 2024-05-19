@@ -124,5 +124,34 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "(//h3[contains(@class,'mt-15 product-title')])")
     public List<WebElement> productCardsNames;
 
+    //Subscribe Now! section on the homepage
+    @FindBy (xpath = "//*[text()=\"Subscribe Now!\"]")
+    public WebElement subscribeNowText;
+
+    public boolean isDisplayedSubscribeNowText(){
+        scrollWithJs(subscribeNowText);
+        return subscribeNowText.isDisplayed();
+    }
+
+    @FindBy (xpath = "//*[text()=\"Bronze\"]")
+    public WebElement bronzeSubscriptionText;
+    public boolean isDisplayedBronzeSubscriptionText(){
+        scrollWithJs(bronzeSubscriptionText);
+        return bronzeSubscriptionText.isDisplayed();
+    }
+
+    @FindBy (xpath = "//*[text()=\"Gold\"]")
+    public WebElement goldSubscriptionText;
+    public boolean isDisplayedGoldSubscriptionText(){
+        scrollWithJs(goldSubscriptionText);
+        return goldSubscriptionText.isDisplayed();
+    }
+
+    @FindBy (xpath = "//*[text()=\"Silver\"]")
+    public WebElement silverSubscriptionText;
+    public boolean isDisplayedSilverSubscriptionText(){
+        scrollWithJs(silverSubscriptionText);
+        return silverSubscriptionText.isDisplayed();
+    }
 
 }

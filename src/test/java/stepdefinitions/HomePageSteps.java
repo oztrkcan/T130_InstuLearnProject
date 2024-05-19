@@ -107,5 +107,19 @@ public class HomePageSteps extends BaseStep {
         ReusableMethods.scrollWithJs(homePage.storeProductsTitleText);
     }
 
+    @Given("visitor tests for the {string} text visibility displayed in the body section")
+    public void visitor_tests_for_the_text_visibility_displayed_in_the_body_section(String givenText) {
+        Assert.assertEquals(givenText,homePage.subscribeNowText.getText());
+        Assert.assertTrue(homePage.isDisplayedSubscribeNowText());
+    }
+
+    @Given("displays the {string} subscription option under Subscribe Now! menu")
+    public void displays_the_under_subscribe_now_menu(String string) {
+        switch (string) {
+            case "Bronze" -> Assert.assertTrue(homePage.isDisplayedBronzeSubscriptionText());
+            case "Gold" -> Assert.assertTrue(homePage.isDisplayedGoldSubscriptionText());
+            case "Silver" -> Assert.assertTrue(homePage.isDisplayedSilverSubscriptionText());
+        }
+    }
 
 }
