@@ -18,6 +18,28 @@ public class HomePage extends BasePage {
         driver.get(TestDataBase.homePageUrl);
     }
 
+    /////////////////////////////////////////----------Search Box---------------///////////////////////////////////////
+
+    // Search Box
+    @FindBy(xpath = "(//input[@name='search'])[2]")
+    public WebElement searchBoxHomePageBody;
+
+    public void sendKeysSearchBoxHomePageBody(String  text){
+        sendKeys(searchBoxHomePageBody, text);
+    }
+    // Search Button
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    public WebElement searchButton;
+
+    public void clickSearchButton(){
+        click(searchButton);
+    }
+
+    //Search Result
+    @FindBy(css = "[class='mt-5 text-center white-space-pre-wrap']")
+    public WebElement searchResultText;
+
+
     /////////////////////////////////////////===========instructor=============////////////////////////////////////////
 
     //All Instructors button
