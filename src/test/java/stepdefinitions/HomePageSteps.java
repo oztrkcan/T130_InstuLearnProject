@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
@@ -122,4 +123,30 @@ public class HomePageSteps extends BaseStep {
         }
     }
 
+
+    @Then("I see the title of Home Page {string}")
+    public void iSeeTheTitleOfHomePage(String title) {
+        Assert.assertEquals(title, driver.getTitle());
+    }
+
+    @Then("I see Search Box  on Home Page body")
+    public void iSeeSearchBoxOnHomePageBody() {
+        Assert.assertTrue(homePage.searchBoxHomePageBody.isDisplayed());
+    }
+
+    @When("I enter a {string} at the Search box")
+    public void iEnterAAtTheSearchBox(String text) {
+        homePage.sendKeysSearchBoxHomePageBody(text);
+    }
+
+    @And("I click Search Button")
+    public void iClickSearchButton() {
+        homePage.clickSearchButton();
+    }
+
+
+    @Then("I see the results of my search {string}")
+    public void iSeeTheResultsOfMySearch(String text) {
+        Assert.assertTrue(homePage.searchResultText.getText().contains(text));
+    }
 }

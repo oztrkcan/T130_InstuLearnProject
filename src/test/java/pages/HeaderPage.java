@@ -72,6 +72,18 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath= "//div[1]/button/span")
     public WebElement productCountOfAtTheCard;
 
+    // Categories Link
+    @FindBy(xpath = "//*[@class='menu-category']")
+    public WebElement categoriesLink;
+
+    public boolean isDisplayedCategoriesLInk(){
+        return categoriesLink.isDisplayed();
+    }
+
+    // Home Link
+    @FindBy(xpath = "//*[.='Home']")
+    public WebElement homeLInk;
+
 
 
 }
