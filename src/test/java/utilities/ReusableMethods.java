@@ -123,6 +123,7 @@ public class ReusableMethods {
 
     //JS Scroll
     public static void scrollWithJs(WebElement element) {
+           waitForVisibility(element);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }

@@ -18,4 +18,9 @@ public class HeaderPageSteps extends BaseStep{
         Assert.assertTrue(headerPage.isDisplayedMyProfileLink());
         Assert.assertTrue(headerPage.isEnabledMyProfileLink());
     }
+
+    @Then("I see the product On the Shopping Card logo at the Header")
+    public void iSeeTheProductOnTheShoppingCardLogoAtTheHeader() {
+        Assert.assertTrue(headerPage.productCountOfAtTheCard.isDisplayed());
+    }
 }

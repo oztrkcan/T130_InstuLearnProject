@@ -67,4 +67,11 @@ public class HeaderPage extends BasePage {
     public boolean isEnabledMyProfileLink() {
         return profileLinkInHeader.isEnabled();
     }
+
+    // Product Count at the Shopping Card
+    @FindBy(xpath= "//div[1]/button/span")
+    public WebElement productCountOfAtTheCard;
+
+
+
 }

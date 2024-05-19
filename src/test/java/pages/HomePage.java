@@ -1,7 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import utilities.TestData.TestDataBase;
 
@@ -17,61 +19,30 @@ public class HomePage extends BasePage {
     }
 
     /////////////////////////////////////////===========instructor=============////////////////////////////////////////
-    // instructor all card section
-    @FindBy(css = "[class='owl-stage']")
-    public WebElement allcardSectionOfInstructor;
 
     //All Instructors button
     @FindBy(linkText = "All Instructors")
     public WebElement allINstructorsButtonOnHomePage;
-    public void clickAllINstructorsButtonOnHomePage() {
-        scrollToElementWithAction(allINstructorsButtonOnHomePage);
-        click(allINstructorsButtonOnHomePage);
-    }
 
-    public boolean isDisplayedInstructorsOnHomePage() {
-        return allINstructorsButtonOnHomePage.isDisplayed();
-    }
-
-    // Instructor slider Card
+    // Instructor slider
     @FindBy(css = "[class='owl-dot']")
     public List<WebElement> instructorSliderCards;
-    public void clickSliderCardOfInstructors() {
-        scrollToElementWithAction(allINstructorsButtonOnHomePage);
-        for (WebElement card: instructorSliderCards){
-            click(card);
-        }
-    }
-    // instructors RAting Score
+
+    // instructors Rating Score
     @FindBy(xpath = "(//*[@class='owl-item active center'])/div/div/div/div[2]/div ")
     public WebElement ratingScoreOfInstructors;
 
-    public boolean isDisplayedRatingOfScoreOfInstructors() {
-        scrollToElementWithAction(allcardSectionOfInstructor);
-        return ratingScoreOfInstructors.isDisplayed();
-    }
     // instructors Name
     @FindBy(xpath = "(//*[@class='owl-item active center'])//h3")
     public WebElement nameOfINstructors;
 
-    public boolean isDisplayedNameOfInstructors() {
-        scrollToElementWithAction(allcardSectionOfInstructor);
-        return nameOfINstructors.isDisplayed();
-    }
-
-    // instructors CArd Reserve a meeting
+    // instructors Card Reserve a meeting
     @FindBy(xpath = "(//*[@class='owl-item active center'])//a[2]")
     public WebElement reserveaMeetingForInstructors;
-    public boolean isDisplayedReserveAMeetingForInstructors() {
-        scrollToElementWithAction(allcardSectionOfInstructor);
-        return reserveaMeetingForInstructors.isDisplayed();
-    }
+
     // instructors Reserve a Meeting
     @FindBy(xpath = "//*[@class='owl-item active']//a[.=\"Reserve a live meeting\"]")
     public List<WebElement> reserveMeetings;
-    public void clickReserveAMeeting(){
-        click(reserveMeetings.getFirst());
-    }
 
     ///////////////////////////////////VİSİTOR////////////////////////////////
     //Home page body>>Join us as an Instructor and start teaching link
@@ -85,7 +56,7 @@ public class HomePage extends BasePage {
         scrollWithJs(discountedCoursesTitle);
         return JoinasInstructorSection.isDisplayed();}
     public void clickJoinAsInstructorSection(){
-        scrollToElementWithAction(discountedCoursesTitle);
+        scrollWithJs(discountedCoursesTitle);
         click(JoinasInstructorSection);}
 
 
@@ -99,17 +70,9 @@ public class HomePage extends BasePage {
     @FindBy(className = "features-swiper-pagination")
     public WebElement sliderOfStoreProducts;
 
-    public boolean isDisplayedStoreProductTitleText(){
-        boolean result= false;
-        if(sliderOfStoreProducts.isDisplayed() & storeProductsTitleText.isDisplayed()){
-            result = true;
-        }
-        return result;
-    }
     // Slider
     @FindBy(xpath = "//div[contains(@class,'swiper-pagination new-products-swiper-pagination')]//span")
     public List<WebElement> sliderlist;
-
 
     //Price of Products
     @FindBy(xpath = "//*[@class='product-card-body']//*[@class='product-price-box mt-25']")
@@ -127,21 +90,6 @@ public class HomePage extends BasePage {
     @FindBy(css = "[class='product-card']")
     public List<WebElement> allProduct;
 
-    public boolean isDisplayedOnCard(List<WebElement> slider,List<WebElement> elementList) {
-        boolean result= false;
-
-        for (WebElement slide : slider) {
-            click(slide);
-            for (WebElement element: elementList){
-                if (element.isDisplayed()){
-                    result=true;
-                    break;
-                }
-            }
-        }
-        return result;
-    }
-
     public boolean isDisplayedHoverOnCard(List<WebElement> cardList, List<WebElement>elementList){
         boolean result= false;
         for (WebElement card : cardList){
@@ -153,10 +101,28 @@ public class HomePage extends BasePage {
                         }
                     }
             }
-
         }
         return result;
     }
+
+    public void clickAddToCard() {
+        for (WebElement card : allProduct) {
+            try {
+                hover(card);
+                for (WebElement element : addToCartButton) {
+                    if (element.isDisplayed()) {
+                        click(element);
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    // Product CArds Names
+    @FindBy(xpath = "(//h3[contains(@class,'mt-15 product-title')])")
+    public List<WebElement> productCardsNames;
 
 
 }

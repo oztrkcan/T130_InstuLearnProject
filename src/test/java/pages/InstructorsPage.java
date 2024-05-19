@@ -91,13 +91,17 @@ public class InstructorsPage extends BasePage{
             click(participitesElementDrap);
         }
     }
+    //Footer
+    @FindBy(css = "[class=' footer-subscribe d-block d-md-flex align-items-center justify-content-between']")
+    public WebElement footer;
+
 
     //Reserve A Meeting Button
     @FindBy(xpath = "//button[text()='Reserve a Meeting']")
     public WebElement reserveAMeetingButton;
 
     public void clickReserveAMeetingButton(){
-        scrollToElementWithAction(reserveAMeetingButton);
+        scrollWithJs(footer);
         click(reserveAMeetingButton);
     }
 
