@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -32,5 +33,25 @@ public class HeaderPageSteps extends BaseStep{
     @Then("I see  Home link on Header")
     public void iSeeHomeLinkOnHeader() {
         Assert.assertTrue(headerPage.homeLInk.isDisplayed());
+    }
+
+    @Then("I see Courses Link on Header")
+    public void ıSeeCoursesLinkOnHeader() {
+     Assert.assertTrue(headerPage.isDisplayedCoursesLink());
+    }
+
+    @And("I see Instructors Link on Header")
+    public void ıSeeInstructorsLinkOnHeader() {
+        Assert.assertTrue(headerPage.homeLInk.isDisplayed());
+    }
+
+    @Then("I see Store Link on Header")
+    public void ıSeeStoreLinkOnHeader() {
+        Assert.assertTrue(headerPage.storeLink.isDisplayed());
+    }
+
+    @Then("I see Blog Link on Header")
+    public void ıSeeBlogLinkOnHeader() {
+        Assert.assertTrue(headerPage.blogLink.isDisplayed());
     }
 }

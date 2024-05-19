@@ -149,4 +149,5 @@ public class HomePageSteps extends BaseStep {
     public void iSeeTheResultsOfMySearch(String text) {
         Assert.assertTrue(homePage.searchResultText.getText().contains(text));
     }
+
 }

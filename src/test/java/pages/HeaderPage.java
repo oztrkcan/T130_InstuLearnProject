@@ -13,7 +13,8 @@ public class HeaderPage extends BasePage {
     // Home Link
     @FindBy(linkText = "Home")
     public WebElement homeLinkInHeader;
-    public void clickHomeLinkInHeader(){
+
+    public void clickHomeLinkInHeader() {
         click(homeLinkInHeader);
     }
 
@@ -53,15 +54,16 @@ public class HeaderPage extends BasePage {
     @FindBy(css = "[class='rounded-circle']")
     public WebElement profileLogoInHeader;
 
-    public void clickProfileLogoInHeader(){
+    public void clickProfileLogoInHeader() {
         click(profileLogoInHeader);
     }
 
     //Profile Link
     @FindBy(xpath = "//span[text()='Profile']")
     public WebElement profileLinkInHeader;
+
     public boolean isDisplayedMyProfileLink() {
-    return profileLinkInHeader.isDisplayed();
+        return profileLinkInHeader.isDisplayed();
     }
 
     public boolean isEnabledMyProfileLink() {
@@ -69,14 +71,14 @@ public class HeaderPage extends BasePage {
     }
 
     // Product Count at the Shopping Card
-    @FindBy(xpath= "//div[1]/button/span")
+    @FindBy(xpath = "//div[1]/button/span")
     public WebElement productCountOfAtTheCard;
 
     // Categories Link
     @FindBy(xpath = "//*[@class='menu-category']")
     public WebElement categoriesLink;
 
-    public boolean isDisplayedCategoriesLInk(){
+    public boolean isDisplayedCategoriesLInk() {
         return categoriesLink.isDisplayed();
     }
 
@@ -84,6 +86,38 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//*[.='Home']")
     public WebElement homeLInk;
 
+    // Courses Link
 
+    @FindBy(xpath = "(//a[@class='nav-link'])[2]")
+    public WebElement coursesLink;
+
+    public boolean isDisplayedCoursesLink() {
+        return coursesLink.isDisplayed();
+
+        // Instructors Link
+    }
+
+    @FindBy(xpath = "(//a[@class='nav-link'])[3]")
+    public WebElement instructorsLink;
+
+    public boolean isDisplayedInstructorsLink() {
+        return instructorsLink.isDisplayed();
+    }
+
+    // Store Link
+
+    @FindBy(xpath = "//a[@href='/products']")
+    public WebElement storeLink;
+    public boolean isDisplayedStoreLink() {
+        return storeLink.isDisplayed();
+
+    }
+
+    // Blog Link
+    @FindBy(xpath = "//a[@href='/blog']")
+    public WebElement blogLink;
 
 }
+
+
+
