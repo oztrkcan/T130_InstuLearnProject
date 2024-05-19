@@ -144,9 +144,28 @@ public class HomePageSteps extends BaseStep {
         homePage.clickSearchButton();
     }
 
-
     @Then("I see the results of my search {string}")
     public void iSeeTheResultsOfMySearch(String text) {
         Assert.assertTrue(homePage.searchResultText.getText().contains(text));
+    }
+
+    @When("I click All Product Button on Home Page")
+    public void iClickAllProductButtonOnHomePage() {
+        homePage.clickAllProductButton();
+    }
+
+    @Then("I see the {string} url")
+    public void iSeeTheUrl(String url) {
+        Assert.assertEquals(url,driver.getCurrentUrl());
+    }
+
+    @Then("I click {string} one of the newest course")
+    public void iClickOneOfTheNewestCourse(String text) {
+        homePage.clickWithTextOnCard(homePage.neweztCourseSlider,homePage.newestCourseNames, text);
+    }
+
+    @And("I scroll the Newest Course Cards On Home Page")
+    public void iScrollTheNewestCourseCardsOnHomePage() {
+        ReusableMethods.scrollWithJs(homePage.newestCourseTitle);
     }
 }

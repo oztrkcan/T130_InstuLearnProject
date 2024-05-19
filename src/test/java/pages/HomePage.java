@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import utilities.TestData.TestDataBase;
 
+import java.security.cert.X509Certificate;
 import java.util.List;
 
 public class HomePage extends BasePage {
@@ -39,6 +40,19 @@ public class HomePage extends BasePage {
     @FindBy(css = "[class='mt-5 text-center white-space-pre-wrap']")
     public WebElement searchResultText;
 
+    ///////////////////////////////////////------------Newest Cateogry-----------//////////////////////////////////////
+
+    // Newest Course names
+    @FindBy(xpath = "//div/div[2]/div/figure/figcaption/a/h3")
+    public List<WebElement> newestCourseNames;
+
+    //Newest Course slider
+    @FindBy(xpath = "//section[3]/div[2]/div[2]/div/span")
+    public List<WebElement> neweztCourseSlider;
+
+    //Newest Course Title
+    @FindBy(xpath = "//section[3]/div[1]/div/h2")
+    public  WebElement newestCourseTitle;
 
     /////////////////////////////////////////===========instructor=============////////////////////////////////////////
 
@@ -146,6 +160,16 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "(//h3[contains(@class,'mt-15 product-title')])")
     public List<WebElement> productCardsNames;
 
+    // All Product Button
+    @FindBy(xpath = "//*[.='All Products']")
+    public WebElement allProductButtonOnHomePage;
+
+    public void clickAllProductButton() {
+        clickWithJs1(allProductButtonOnHomePage);
+    }
+
+    ////////////////////////////////////----------Subscribe NOw-------------////////////////////////////////////////////
+
     //Subscribe Now! section on the homepage
     @FindBy (xpath = "//*[text()=\"Subscribe Now!\"]")
     public WebElement subscribeNowText;
@@ -175,5 +199,7 @@ public class HomePage extends BasePage {
         scrollWithJs(silverSubscriptionText);
         return silverSubscriptionText.isDisplayed();
     }
+
+
 
 }

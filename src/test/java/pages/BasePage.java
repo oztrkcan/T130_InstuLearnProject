@@ -48,10 +48,10 @@ public class BasePage extends ReusableMethods {
         for (WebElement slide : sliderList) {
             for (WebElement element : elementOfText) {
                 if (element.getText().equalsIgnoreCase(text)) {
-                    click(element);
+                    clickWithJs1(element);
                     break;
                 }else {
-                    click(slide);
+                    clickWithJs1(slide);
                 }
             }
         }

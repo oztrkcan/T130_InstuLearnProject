@@ -1,4 +1,4 @@
-@wip
+
   Feature: yeni
     Scenario:yeni
       Given i click on login link on Login page
@@ -6,14 +6,14 @@
       And i enter "Learn.2504" password for login
       When i click on the login Button for login
       Then i must be login
-    @wip
+
     Scenario: new new new new arzu
       Given i m on Dashboard with "muammer.teacher@instulearn.com" email
 
     Scenario: new
       Given i m on Dashboard as a "teacher" with "alican" email
 
-  @wip
+
     Scenario: new
       Given i m on Dashboard as a "student" with "muammer" email
 
