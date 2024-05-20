@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HeaderPage;
+import utilities.TestData.TestDataBase;
 
 public class HeaderPageSteps extends BaseStep{
         HeaderPage headerPage = new HeaderPage(driver);
@@ -32,5 +33,29 @@ public class HeaderPageSteps extends BaseStep{
     @Then("I see  Home link on Header")
     public void iSeeHomeLinkOnHeader() {
         Assert.assertTrue(headerPage.homeLInk.isDisplayed());
+    }
+
+
+    @When("I click dashboard link on home page")
+    public void ıClickDashboardLinkOnHomePage() {
+        headerPage.clickDashboardLink();
+    }
+
+    @Then("I access dashboard page")
+    public void ıAccessDashboardPage() {
+        Assert.assertEquals(TestDataBase.dashboardPageUrl,driver.getCurrentUrl());
+    }
+
+    @Then("The Enable offline status button appears")
+    public void theEnableOfflineStatusButtonAppears() {
+        Assert.assertTrue(headerPage.isDisplayedActivateButton());
+
+
+    }
+
+    @Then("Activate offline status button is active is verified")
+    public void activateOfflineStatusButtonIsActiveIsVerified() {
+
+        Assert.assertTrue(headerPage.isEnabledActivateButton());
     }
 }
