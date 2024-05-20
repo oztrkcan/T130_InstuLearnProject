@@ -83,6 +83,33 @@ public class HeaderPage extends BasePage {
     // Home Link
     @FindBy(xpath = "//*[.='Home']")
     public WebElement homeLInk;
+    //kbr
+    @FindBy(xpath = "//a[@href='/panel']")
+    public WebElement dashboardLinkHomeHeader;
+
+    public void clickDashboardLink() {
+        click(dashboardLinkHomeHeader);
+    }
+
+    @FindBy(xpath = "(//*[.='Activate offline status'])[1]")
+    public WebElement activateOfflineStatusButton;
+    public boolean isDisplayedActivateButton(){
+        return activateOfflineStatusButton.isDisplayed();
+    }
+    public boolean isEnabledActivateButton(){
+        return activateOfflineStatusButton.isEnabled();
+    }
+
+    @FindBy(xpath = "(//span[text()='Courses'])[2]")
+    public WebElement dashboardCoursesLink;
+
+
+    @FindBy(xpath = "//span[text()='Course Bundles']")
+    public WebElement dashboardCourseBundlesLink;
+
+    @FindBy(xpath = "//span[text()='Meetings']")
+    public WebElement dashboardMeetingsLink;
+
 
 
 
