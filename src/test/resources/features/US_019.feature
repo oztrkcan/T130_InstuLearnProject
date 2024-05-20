@@ -19,7 +19,7 @@ Feature: Have a Dashboard page
      Then The Support,Marketing,Noticeboard link appears in the sidebar on the dashboard and it is verified that it is active.
      Then The Notifications,Settings,My Profile,Log Out link appears in the sidebar on the dashboard and it is verified that it is active.
 
-   Scenario: TC04_US019: View All Events link visibility and activity test
+   Scenario: TC04_US019:: View All Events link visibility and activity test
      Given i m on Dashboard with "kubratankisi.teacher@instulearn.com" email
      Then The View All Events link appears on the Dashboard page and confirms it is active
 
