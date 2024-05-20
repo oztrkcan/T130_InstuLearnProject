@@ -21,4 +21,36 @@ public class LoginDashboardSteps extends BaseStep{
     public void iClickMyProfileLinkOnDashboardSidebar() {
         loginDashboardPage.clickMyProfileLinkOnDashboardSidebar();
     }
+
+    @When("I click Meeting Link on the Dashboard Sidebar")
+    public void iClickMeetingLinkOnTheDashboardSidebar() {
+        loginDashboardPage.clickMeetingsLinkOnSidebar();
+    }
+
+    @Then("I can see the My reservations Link on the Sidebar")
+    public void iCanSeeTheMyReservationsLinkOnTheSidebar() {
+        Assert.assertTrue(loginDashboardPage.meetingsLinkOnSidebar.isDisplayed());
+    }
+
+    @Then("I can see the Request Link on the Sidebar")
+    public void iCanSeeTheRequestLinkOnTheSidebar() {
+        Assert.assertTrue(loginDashboardPage.requestLinkOnSidebar.isDisplayed());
+    }
+
+    @Then("I can see the Settings Link on the Sidebar")
+    public void iCanSeeTheSettingsLinkOnTheSidebar() {
+        Assert.assertTrue(loginDashboardPage.settingsLinkOnSidebar.isDisplayed());
+    }
+
+
+    @When("I click My Reservations Link on the Sidebar")
+    public void iClickMyReservationsLinkOnTheSidebar() {
+        loginDashboardPage.clickMyReservationsLinkOnSidebar();
+    }
+
+
+    @When("I click Settings Link on the Sidebar")
+    public void iClickSettingsLinkOnTheSidebar() {
+        loginDashboardPage.clickSettingsLinkOnSidebar();
+    }
 }

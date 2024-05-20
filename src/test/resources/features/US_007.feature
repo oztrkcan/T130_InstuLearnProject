@@ -24,8 +24,8 @@ Feature: I can review and purchase products on the Home Page
     And I scroll the CategoryTitle Product Page
     Then I see the "<category>" category on Product Page
     Examples:
-      |  category        |
-      |     e-book       |
+      |  category              |
+      |     e-book             |
       |     Science Tools      |
 
   Scenario: TC_04_US_007: I can see and click All product Button in the Home Page

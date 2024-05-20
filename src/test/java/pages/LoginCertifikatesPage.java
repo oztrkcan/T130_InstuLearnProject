@@ -107,7 +107,6 @@ public class LoginCertifikatesPage extends LoginPage{
 
     public void clickShowResult() {
         click(showResult);
-        ReusableMethods.bekle(3);
     }
 
     // Certificates
