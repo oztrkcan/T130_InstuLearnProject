@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class LoginDashboardPage extends LoginPage{
     public LoginDashboardPage(WebDriver driver) {
         super(driver);
@@ -213,12 +215,28 @@ public class LoginDashboardPage extends LoginPage{
         return noticeboard.isDisplayed();
     }
 
-    @FindBy(xpath = "//button[@data-id='12']")
-    public WebElement noticeboardMoreInfoButton1;
+    //MOre Info Buttons
+    @FindBy(xpath = "//*[.='More info']")
+    public List<WebElement> moreInfoButtons;
 
-    @FindBy(xpath = "(//button[contains(@class,'js-noticeboard-info btn')])[2]")
-    public WebElement noticeboardMoreInfoButton2;
+    public void clickMoreInfoButton(int index){
+        click(moreInfoButtons.get(index));
+    }
+    // Noticeboard Message
+    @FindBy(id = "swal2-content")
+    public WebElement noticboardMessage;
 
+    public boolean isDisplayedNoticeboardMessage(){
+        return noticboardMessage.isDisplayed();
+    }
+
+    // My chart
+    @FindBy(id = "myChart")
+    public WebElement myChartGrapphic;
+
+    public boolean isDisplayedMyChart(){
+        return myChartGrapphic.isDisplayed();
+    }
 
 
 

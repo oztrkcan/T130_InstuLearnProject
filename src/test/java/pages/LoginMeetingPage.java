@@ -141,7 +141,7 @@ public class LoginMeetingPage extends LoginDashboardPage{
         }
     }
     // Save Button
-    @FindBy(xpath = "//*[.='Save']")
+    @FindBy(id = "saveTime")
     public WebElement saveButton;
 
     public void clickSaveButton(){

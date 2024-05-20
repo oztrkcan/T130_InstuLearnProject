@@ -76,6 +76,10 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//*[@class='menu-category']")
     public WebElement categoriesLink;
 
+    public void clickCategoriesLinkOnHedaer(){
+        click(categoriesLink);
+    }
+
     public boolean isDisplayedCategoriesLInk(){
         return categoriesLink.isDisplayed();
     }
@@ -83,7 +87,16 @@ public class HeaderPage extends BasePage {
     // Home Link
     @FindBy(xpath = "//*[.='Home']")
     public WebElement homeLInk;
-    //kbr
+
+    // Courses Link
+    @FindBy(xpath = "(//a[@class='nav-link'])[2]")
+    public WebElement coursesLink;
+
+    public void clickCoursesLinkOnHeader(){
+        click(coursesLink);
+    }
+
+    // Dashboard Link
     @FindBy(xpath = "//a[@href='/panel']")
     public WebElement dashboardLinkHomeHeader;
 
@@ -91,26 +104,36 @@ public class HeaderPage extends BasePage {
         click(dashboardLinkHomeHeader);
     }
 
+    // Activate Offline Status
     @FindBy(xpath = "(//*[.='Activate offline status'])[1]")
     public WebElement activateOfflineStatusButton;
+
     public boolean isDisplayedActivateButton(){
         return activateOfflineStatusButton.isDisplayed();
     }
+
     public boolean isEnabledActivateButton(){
         return activateOfflineStatusButton.isEnabled();
     }
 
+    // DashboardCourses Link
     @FindBy(xpath = "(//span[text()='Courses'])[2]")
     public WebElement dashboardCoursesLink;
 
-
+    // Dashboard CourseBundles LInk
     @FindBy(xpath = "//span[text()='Course Bundles']")
     public WebElement dashboardCourseBundlesLink;
 
+    // Dashboard Meetings Link
     @FindBy(xpath = "//span[text()='Meetings']")
     public WebElement dashboardMeetingsLink;
 
+    // Development Link
+    @FindBy(xpath = "//div[text()[normalize-space()='Development']]")
+    public WebElement developmentLinkOnHeader;
 
-
+    public boolean isDisplayedDevelopmentHeader(){
+        return developmentLinkOnHeader.isDisplayed();
+    }
 
 }
