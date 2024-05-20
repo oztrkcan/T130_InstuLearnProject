@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="17.06" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="US_008 As a visitor, I want there to be a section in the body section of the homepage where I can perform my membership transactions." name="TC_01_US_008: Test of displaying membership transactions in the body section of the homepage - Example #1.1" time="6.123">
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Given visitor tests for the "Subscribe Now!" text visibility displayed in the body section.passed
+And displays the "Bronze" subscription option under Subscribe Now! menu.....passed
+]]></system-out>
+</testcase>
+<testcase classname="US_008 As a visitor, I want there to be a section in the body section of the homepage where I can perform my membership transactions." name="TC_01_US_008: Test of displaying membership transactions in the body section of the homepage - Example #1.2" time="5.134">
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Given visitor tests for the "Subscribe Now!" text visibility displayed in the body section.passed
+And displays the "Gold" subscription option under Subscribe Now! menu.......passed
+]]></system-out>
+</testcase>
+<testcase classname="US_008 As a visitor, I want there to be a section in the body section of the homepage where I can perform my membership transactions." name="TC_01_US_008: Test of displaying membership transactions in the body section of the homepage - Example #1.3" time="5.633">
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Given visitor tests for the "Subscribe Now!" text visibility displayed in the body section.passed
+And displays the "Silver" subscription option under Subscribe Now! menu.....passed
+]]></system-out>
+</testcase>
+</testsuite>
