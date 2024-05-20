@@ -48,6 +48,7 @@ public class InstructorsPage extends BasePage{
     // Types of Meeting
     @FindBy(className= "meeting-type-reserve")
     public List<WebElement> typesOfMeeting;
+
     public void clickTypeOfMeeting(String type) {
         for (WebElement each: typesOfMeeting){
             if (each.getText().equalsIgnoreCase(type)){
