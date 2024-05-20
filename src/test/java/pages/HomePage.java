@@ -200,6 +200,17 @@ public class HomePage extends BasePage {
         return silverSubscriptionText.isDisplayed();
     }
 
+    @FindBy(xpath = "//*[@class=\"reward-program-section-hero\"]")
+    public WebElement earnClubPointsText;
+
+    @FindBy(xpath = "(//*[@class=\"btn btn-primary mr-15\"])[2]")
+    public WebElement rewardsButton;
+
+    @FindBy(xpath = "//*[text()='PointsClubButton']")
+    public WebElement pointsClubButton;
+
+    @FindBy(xpath = "//*[text()='PointsDiscountCoupon']")
+    public WebElement discountCoupon;
 
 
 }

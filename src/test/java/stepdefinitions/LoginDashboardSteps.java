@@ -6,11 +6,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.LoginDashboardPage;
+import pages.LoginQuizzesPage;
 
 import static utilities.ReusableMethods.scrollToElementWithAction;
 
 public class LoginDashboardSteps extends BaseStep{
     LoginDashboardPage loginDashboardPage = new LoginDashboardPage(driver);
+
+    LoginQuizzesPage loginQuizzesPage=new LoginQuizzesPage(driver);
     @Then("I see the Link of My Profile in Dashboard sidebar.")
     public void iSeeTheLinkOfMyProfileInDashboardSidebar() {
         Assert.assertTrue(loginDashboardPage.isDisplayedMyProfileLinkInSidebar());
@@ -154,5 +157,10 @@ public class LoginDashboardSteps extends BaseStep{
     @Then("I can see the My Chart Grapphic")
     public void iCanSeeTheMyChartGrapphic() {
         loginDashboardPage.isDisplayedMyChart();
+    }
+
+    @And("Click on the Quizzes title in the Dashboard.")
+    public void clickOnTheQuizzesTitleInTheDashboard () {
+        loginQuizzesPage.quizzesInDashboard.click();
     }
 }

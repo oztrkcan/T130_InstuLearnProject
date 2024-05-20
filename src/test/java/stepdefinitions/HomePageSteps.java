@@ -168,4 +168,36 @@ public class HomePageSteps extends BaseStep {
     public void iScrollTheNewestCourseCardsOnHomePage() {
         ReusableMethods.scrollWithJs(homePage.newestCourseTitle);
     }
+
+    @Then("I should see the Earn Club Points On Home Page")
+    public void iScrollTheEarnClubPointsOnHomePage() {
+        ReusableMethods.scrollWithJs(homePage.earnClubPointsText);
+        Assert.assertTrue(homePage.earnClubPointsText.isDisplayed());
+        ReusableMethods.wait(2);
+    }
+
+    @Then("I should see the Rewards Button On Home Page And Click")
+    public void iScrollTheRewardsButtonOnHomePageAndClick() {
+        ReusableMethods.scrollWithJs(homePage.earnClubPointsText);
+        ReusableMethods.wait(2);
+        Assert.assertTrue(homePage.rewardsButton.isDisplayed());
+        homePage.rewardsButton.click();
+        ReusableMethods.wait(2);
+    }
+
+    @Then("I should see the Points Club Button On Home Page And Click")
+    public void iScrollThePointsClubButtonOnHomePageAndClick() {
+        ReusableMethods.scrollWithJs(homePage.earnClubPointsText);
+        ReusableMethods.wait(2);
+        Assert.assertTrue(homePage.pointsClubButton.isDisplayed());
+        homePage.pointsClubButton.click();
+    }
+
+    @Then("I should see the Discount Coupon On Home Page And Click")
+    public void iScrollTheDiscountCouponOnHomePageAndClick() {
+        ReusableMethods.scrollWithJs(homePage.earnClubPointsText);
+        ReusableMethods.wait(2);
+        Assert.assertTrue(homePage.discountCoupon.isDisplayed());
+        homePage.discountCoupon.click();
+    }
 }
