@@ -209,7 +209,7 @@ public class ReusableMethods {
     }
 
     //HARD WAIT METHOD
-    public static void bekle(int saniye) {
+    public static void wait(int saniye) {
         try {
             Thread.sleep(saniye * 1000);
         } catch (InterruptedException e) {

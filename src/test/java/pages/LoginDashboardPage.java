@@ -28,6 +28,7 @@ public class LoginDashboardPage extends LoginPage{
         scrollWithJs(myProfileLinkInSidebar);
         click(myProfileLinkInSidebar);
     }
+
     //courses link
     @FindBy(xpath = "(//span[text()='Courses'])[2]")
     public WebElement dashboardCoursesLink;
@@ -218,5 +219,39 @@ public class LoginDashboardPage extends LoginPage{
     @FindBy(xpath = "(//button[contains(@class,'js-noticeboard-info btn')])[2]")
     public WebElement noticeboardMoreInfoButton2;
 
+
+
+
+    //Meeting Link
+    @FindBy(xpath = "//span[text()='Meetings']")
+    public WebElement meetingsLinkOnSidebar;
+
+    public void clickMeetingsLinkOnSidebar(){
+        click(meetingsLinkOnSidebar);
+    }
+
+    // My reservations link
+    @FindBy(xpath = "//*[.='My reservations']")
+    public WebElement myReservationsLinkOnSidebar;
+
+    public void clickMyReservationsLinkOnSidebar() {
+        click(myReservationsLinkOnSidebar);
+    }
+
+    // Requests Link
+    @FindBy(xpath = "//*[.='Requests']")
+    public WebElement requestLinkOnSidebar;
+
+    public void clickRequestLinkOnSidebar(){
+        click(requestLinkOnSidebar);
+    }
+
+    // Settings
+    @FindBy(partialLinkText= "Settings")
+    public WebElement settingsLinkOnSidebar;
+
+    public void clickSettingsLinkOnSidebar() {
+        click(settingsLinkOnSidebar);
+    }
 
 }
