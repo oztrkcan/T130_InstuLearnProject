@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import io.cucumber.java.bs.A;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -106,23 +108,22 @@ public class LoginDashboardSteps extends BaseStep{
 
     @Then("I view current advertisements and detailed information on the notice board.")
     public void ıViewCurrentAdvertisementsAndDetailedInformationOnTheNoticeBoard() throws InterruptedException {
-        scrollToElementWithAction(loginDashboardPage.noticeboard);
         Assert.assertTrue(loginDashboardPage.isDisplayednoticeboard());
-        loginDashboardPage.click(loginDashboardPage.noticeboardMoreInfoButton1);
+    }
 
+    @And("I click Settings Link on the Sidebar")
+    public void iClickSettingsLinkOnTheSidebar() {
+        loginDashboardPage.clickSettingsLinkOnSidebar();
+    }
 
-
-
-
-
-    @When("I click Meeting Link on the Dashboard Sidebar")
+    @And("I click Meeting Link on the Dashboard Sidebar")
     public void iClickMeetingLinkOnTheDashboardSidebar() {
         loginDashboardPage.clickMeetingsLinkOnSidebar();
     }
 
     @Then("I can see the My reservations Link on the Sidebar")
     public void iCanSeeTheMyReservationsLinkOnTheSidebar() {
-        Assert.assertTrue(loginDashboardPage.meetingsLinkOnSidebar.isDisplayed());
+        Assert.assertTrue(loginDashboardPage.myReservationsLinkOnSidebar.isDisplayed());
     }
 
     @Then("I can see the Request Link on the Sidebar")
@@ -135,16 +136,23 @@ public class LoginDashboardSteps extends BaseStep{
         Assert.assertTrue(loginDashboardPage.settingsLinkOnSidebar.isDisplayed());
     }
 
-
     @When("I click My Reservations Link on the Sidebar")
     public void iClickMyReservationsLinkOnTheSidebar() {
         loginDashboardPage.clickMyReservationsLinkOnSidebar();
     }
 
+    @When("I click More Info Button {int}")
+    public void iClickMoreInfoButton(int index) {
+        loginDashboardPage.clickMoreInfoButton(index);
+    }
 
-    @When("I click Settings Link on the Sidebar")
-    public void iClickSettingsLinkOnTheSidebar() {
-        loginDashboardPage.clickSettingsLinkOnSidebar();
+    @Then("I see the message of Noticeboard")
+    public void iSeeTheMessageOfNoticeboard() {
+        loginDashboardPage.isDisplayedNoticeboardMessage();
+    }
 
+    @Then("I can see the My Chart Grapphic")
+    public void iCanSeeTheMyChartGrapphic() {
+        loginDashboardPage.isDisplayedMyChart();
     }
 }

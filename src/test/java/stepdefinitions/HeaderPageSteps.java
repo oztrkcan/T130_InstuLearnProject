@@ -49,13 +49,36 @@ public class HeaderPageSteps extends BaseStep{
     @Then("The Enable offline status button appears")
     public void theEnableOfflineStatusButtonAppears() {
         Assert.assertTrue(headerPage.isDisplayedActivateButton());
-
-
     }
 
     @Then("Activate offline status button is active is verified")
     public void activateOfflineStatusButtonIsActiveIsVerified() {
 
         Assert.assertTrue(headerPage.isEnabledActivateButton());
+    }
+
+    @When("I click Categories Link on the Header")
+    public void iClickCategoriesLinkOnTheHeader() {
+        headerPage.clickCategoriesLinkOnHedaer();
+    }
+
+    @Then("I see the Development Link on the Header")
+    public void iSeeTheDevelopmentLinkOnTheHeader() {
+        headerPage.isDisplayedDevelopmentHeader();
+    }
+
+    @When("I click Home Link on Header")
+    public void iClickHomeLinkOnHeader() {
+        headerPage.clickHomeLinkInHeader();
+    }
+
+    @Then("I see the Url {string}")
+    public void iSeeTheUrl(String url) {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+    }
+
+    @When("I click Courses Link on Header")
+    public void iClickCoursesLinkOnHeader() {
+        headerPage.clickCoursesLinkOnHeader();
     }
 }

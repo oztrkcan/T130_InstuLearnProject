@@ -9,12 +9,17 @@
       Then I see  Home link on Header
 
     Scenario: TC_02_US_002: Easy links (Categories, Home, Courses, Instructors, Store, Forums) should be displayed on the top bar of the site. (kisalt)
+      When I click Categories Link on the Header
+      Then I see the Development Link on the Header
+      When I click Home Link on Header
+      Then I see the Url "https://qa.instulearn.com/"
+      When I click Courses Link on Header
 
     Scenario: TC_03_US_002: Easy links (Categories, Home, Courses, Instructors, Store, Forums) should be displayed on the top bar of the site. (kisalt)
 
     Scenario: TC_04_US_002: Easy links (Categories, Home, Courses, Instructors, Store, Forums) should be displayed on the top bar of the site. (kisalt)
 
-    @der
+
     Scenario: TC_05_US_002: Easy links (Categories, Home, Courses, Instructors, Store, Forums) should be displayed on the top bar of the site. (kisalt)
       Then I see Search Box  on Home Page body
       When  I enter a "bunu gondercegiz" at the Search box
