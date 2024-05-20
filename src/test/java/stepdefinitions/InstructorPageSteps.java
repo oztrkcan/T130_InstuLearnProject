@@ -48,4 +48,6 @@ public class InstructorPageSteps extends BaseStep{
         Assert.assertTrue( instructorsPage.isDisplayedContinueShoppingButton());
 
     }
+
+
 }
