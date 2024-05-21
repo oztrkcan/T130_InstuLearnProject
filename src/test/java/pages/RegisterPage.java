@@ -124,36 +124,45 @@ public class RegisterPage extends BasePage{
         wait(5);
 
     }
-    public void inValidEmailRegister(String invalidEmail, String validPassword){
-        String email = ConfigReader.getProperty(invalidEmail.toLowerCase());
-        String password = ConfigReader.getProperty(validPassword);
-        String fullName = TestDataBase.fakeName;
-
-        enterEmailForRegister(email);
-        enterFullNameForRegister(fullName);
-        enterPasswordForRegister(password);
-        enterRetypePasswordForRegister(password);
-        clickIAgreeCheckBox();
-        clickSignupButton();
-        wait(5);
-
-    }
     public boolean displaysErrorMessage(){return errorMessageText.isDisplayed();}
-    public void inValidPasswordRegister(String invalidPassword){
-        String email = TestDataBase.fakeRegisterEmail;
-        String password = TestDataBase.invalidPasswordForRegister;
-        String fullName = TestDataBase.fakeName;
+
+    public void nonInformationRegister(){
+        clickIAgreeCheckBox();
+        clickSignupButton();
+        wait(5);
+    }
+
+
+    // Acount Type
+    @FindBy(css = "[class='font-12 cursor-pointer px-15 py-10']")
+    List<WebElement> accountTypes;
+
+    public void selectAccontType(String str){
+        for (WebElement type: accountTypes){
+            if (type.getText().equalsIgnoreCase(str)){
+                click(type);
+            }
+        }
+    }
+
+
+    public void tryRegister(String email, String person, String password){
 
         enterEmailForRegister(email);
-        enterFullNameForRegister(fullName);
+        enterFullNameForRegister(person);
         enterPasswordForRegister(password);
         enterRetypePasswordForRegister(password);
         clickIAgreeCheckBox();
         clickSignupButton();
         wait(5);
-
     }
-    public void nonInformationRegister(){
+
+    public void fakeValidRegister(){
+        String password = TestDataBase.teacherValidPassword;
+        enterEmailForRegister(TestDataBase.faker.internet().emailAddress());
+        enterFullNameForRegister(TestDataBase.faker.name().fullName());
+        enterPasswordForRegister(password);
+        enterRetypePasswordForRegister(password);
         clickIAgreeCheckBox();
         clickSignupButton();
         wait(5);
