@@ -53,6 +53,12 @@ public class LoginMyProfilePage extends LoginDashboardPage{
         click(reserveAMeetingOnMyProfileLink);
     }
 
+    // Group Meeting
+    @FindBy(id = "meetingSettingFormSubmit")
+    public WebElement saveButtonForGroupMeeting;
 
+    public void clickSaveButtonForGroupMeeting() {
+        click(saveButtonForGroupMeeting);
+    }
 
 }

@@ -162,4 +162,14 @@ public class LoginDashboardSteps extends BaseStep{
     @And("I click on the Quizzes title in the Dashboard.")
     public void iClickOnTheQuizzesTitleInTheDashboard () {
         loginQuizzesPage.quizzesInDashboard.click();}
+
+    @And("I click Completion Certificates link on Dashboard Sidebar")
+    public void iClickCompletionCertificatesLinkOnDashboardSidebar() {
+        loginDashboardPage.clickCompletionCertificatesLink();
+    }
+
+    @When("i click Certificates Link ond Dashboard Sidebar")
+    public void iClickCertificatesLinkOndDashboardSidebar() {
+        loginDashboardPage.clickCertificatesLink();
+    }
 }

@@ -36,7 +36,7 @@
         |  day               | |    status          |
         |     All Days       | |    All             |
 
-    @ban
+
     Scenario Outline:TC_04>US_024 Meeting statistics information should be visible on the page
       And I click Settings Link on the Sidebar
       And I click toggle Dropdown Menu the 3 one and click Add Time Button on Settings
@@ -50,6 +50,16 @@
     |     5:15              | |       8:45          |
     |     2:55              | |       4:15          |
 
+
+    Scenario: TC_05>US_024 Hourly rate selection for face-to-face meetings should be able to determine the min-max number of participants
+      And I click Settings Link on the Sidebar
+      And I scroll the Group Meetings on Settings for Meeting Page
+      And I enter 20 for Amount and 10 for Discount Rate
+      And I click Available for In-person meetings Checkbox
+      And I enter 5 for Hourly price
+      And I click Available for group meetings Checkbox
+      And I send 5 for Minimum 50 for Maximum Student
+      Then I can click Save button for Group Meeting
 
 
 

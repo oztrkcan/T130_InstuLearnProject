@@ -13,19 +13,19 @@ public class LoginCertifikatesPage extends LoginPage{
         super(driver);
     }
 
-    // Certificates Link
-    @FindBy(xpath = "//*[.='Certificates']")
-    public WebElement certificatesLinkOnDashboardSidebar;
-
-    public void clickCertificatesLinkOnDashboardSidebar(){
-        clickWithJs1(certificatesLinkOnDashboardSidebar);
-    }
 
     ///////////////////////////////////----------------Achievements-----------/////////////////////////////////////////
 
     // Achivemnets Link
     @FindBy(linkText = "Achievements")
     public WebElement achivementsLinkonDashboardSidebar;
+
+    public boolean isDisplayedAchvimnetLinkOnSidabar(){
+        try {
+            waitForVisibility(achivementsLinkonDashboardSidebar);
+        }catch (Exception e){}
+        return achivementsLinkonDashboardSidebar.isDisplayed();
+    }
 
     public void clickAchivementsLinkOnSidebar() {
         click(achivementsLinkonDashboardSidebar);
@@ -40,7 +40,7 @@ public class LoginCertifikatesPage extends LoginPage{
     public WebElement fromDate;
 
     public void clickFrom(){
-        fromDate.click();
+        click(fromDate);
     }
     //Prev From Date
     @FindBy(xpath = "//table[@class='table-condensed']//th")
@@ -154,7 +154,16 @@ public class LoginCertifikatesPage extends LoginPage{
     ///////////////////////////////////----------------Completion Certificates---------------//////////////////////////
     @FindBy(linkText = "Completion Certificates")
     public WebElement completionCertificatesLinkOnSidebar;
+    // You have No Certificates Text;
+    @FindBy(className = "text-dark-blue")
+    public WebElement youHaveNoCertificatesText;
 
+    public boolean isDisplayedyouHaveNoCertificates(){
+        try {
+            waitForVisibility(youHaveNoCertificatesText);
+        }catch (Exception e) {}
+        return youHaveNoCertificatesText.isDisplayed();
+    }
 
 
 }

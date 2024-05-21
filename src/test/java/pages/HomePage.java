@@ -80,6 +80,10 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@class='owl-item active']//a[.=\"Reserve a live meeting\"]")
     public List<WebElement> reserveMeetings;
 
+    public void clickReserveAMeeting(){
+        click(reserveMeetings.getFirst());
+    }
+
     ///////////////////////////////////VİSİTOR////////////////////////////////
     //Home page body>>Join us as an Instructor and start teaching link
     @FindBy(xpath = "//img[@alt='Home - Join as instructor']")

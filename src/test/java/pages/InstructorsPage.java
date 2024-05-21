@@ -102,18 +102,28 @@ public class InstructorsPage extends BasePage{
     public WebElement reserveAMeetingButton;
 
     public void clickReserveAMeetingButton(){
-        scrollWithJs(footer);
-        click(reserveAMeetingButton);
+        clickWithJS2(reserveAMeetingButton);
     }
 
     // Continiue Shopping Button
     @FindBy(css = "[class='btn btn-sm btn-primary mt-25']")
     public WebElement continueShoppingButton;
 
-
     public boolean isDisplayedContinueShoppingButton(){
-        waitForVisibility(continueShoppingButton);
+        try {
+            waitForVisibility(continueShoppingButton);
+        }catch (Exception e) {}
         return continueShoppingButton.isDisplayed();
+    }
+
+    // REquest FAiled Text
+    @FindBy(xpath = "//*[.='Request Failed']")
+    public WebElement requestFailedText;
+
+    public boolean isDisplayedrequestFailedText(){
+        try {waitForVisibility(requestFailedText);}
+        catch (Exception e){}
+        return requestFailedText.isDisplayed();
     }
 
 

@@ -156,4 +156,67 @@ public class LoginMeetingPage extends LoginDashboardPage{
     public void sendDescriptionForMeeting(String description){
         sendKeys(descriptionForMeeting, description);
     }
+
+
+    // Group Meeting text
+    @FindBy(xpath = "//h2[text()='Group meeting']")
+    public WebElement groupMeetingPage;
+
+    public void scrolltoGroupMeeting() {
+        scrollWithJs(groupMeetingPage);
+    }
+
+    // Amount Text Box
+    @FindBy(name = "amount")
+    public WebElement amountTextBox;
+
+    public void sendAmountForMeeting(int amount) {
+        sendKeys(amountTextBox, amount+"");
+    }
+
+    // Discount TExt Box
+    @FindBy(name = "discount")
+    public WebElement discountTextBox;
+
+    public void sendDiscountForMeeting(int discount) {
+        sendKeys(discountTextBox,discount+"");
+    }
+
+
+    //Available for In-person meetings
+    @FindBy(xpath = "//*[.='Available for In-person meetings']")
+    public WebElement inPersonMeetings;
+
+    public void clickAvailableForInPersonChekbox() {
+        clickWithJs1(inPersonMeetings);
+    }
+    // Hourly Price TextBox
+    @FindBy(name = "in_person_amount")
+    public WebElement hourlyPriceTextBox;
+
+    public void sendHourlyPrice(int hourlyPrice) {
+        sendKeys(hourlyPriceTextBox,hourlyPrice+"");
+    }
+    //Group Meeting Checkbox
+    @FindBy(id= "groupMeetingSwitch")
+    public WebElement groupMeetingCheckbox;
+
+    public void clickAVailableForGroupMeetingCheckbox() {
+        click(groupMeetingCheckbox);
+    }
+
+    // Minimum Student
+    @FindBy(name = "online_group_min_student")
+    public WebElement minimumStudent;
+    public void sendMinForStudent(int min) {
+        sendKeys(minimumStudent, min+"");
+    }
+    //Maksimum Student
+    @FindBy(name = "online_group_max_student")
+    public WebElement maksimumStudent;
+
+
+    public void sendMaxForStudent(int max) {
+        sendKeys(maksimumStudent,max+"");
+    }
 }
