@@ -7,27 +7,27 @@ Feature: Creating and editing quizzes as an Instructor
     Then I see the Link of My Profile in Dashboard sidebar.
 
   Scenario: TC_02_US_025: View the Quizzes title and contents in the Dashboard.
-    And Click on the Quizzes title in the Dashboard.
-    Then Click on the New quiz link under the Quizzes heading and go to the relevant page.
-    Then Click on the List link under the Quizzes heading and go to the relevant page.
-    Then Click on the Results link under the Quizzes heading and go to the relevant page.
-    Then Click on the My results link under the Quizzes heading and go to the relevant page.
-    Then Click on the Not Participated link under the Quizzes heading and go to the relevant page.
-  @batuhan
+    And I click on the Quizzes title in the Dashboard.
+    Then I click on the New quiz link under the Quizzes heading and go to the relevant page.
+    Then I click on the List link under the Quizzes heading and go to the relevant page.
+    Then I click on the Results link under the Quizzes heading and go to the relevant page.
+    Then I click on the My results link under the Quizzes heading and go to the relevant page.
+    Then I click on the Not Participated link under the Quizzes heading and go to the relevant page.
+
   Scenario: TC_03_US_025: Create a new quiz and answers under the New Quiz heading.
-    And Click on the Quizzes title in the Dashboard.
-    Then Click on the New quiz link under the Quizzes heading and go to the relevant page.
-    Then Fill "Quiz 01" the Quiz title.
-    Then Fill "60" the Time title.
-    Then Fill "2" the Number of attempts title.
-    Then Fill "55" the Pass mark title.
-    Then Fill "10" the Expiry days title.
-    Then Click the Display questions randomly button.
-    Then Click the Certificate included button.
-    Then Click the Active quiz button.
-    Then Click the Create button.
-    Then Click the Save button.
-    When Verify the text Item added successfully.
+    And I click on the Quizzes title in the Dashboard.
+    Then I click on the New quiz link under the Quizzes heading and go to the relevant page.
+    Then I fill "Quiz 01" the Quiz title.
+    Then I fill "60" the Time title.
+    Then I fill "2" the Number of attempts title.
+    Then I fill "55" the Pass mark title.
+    Then I fill "10" the Expiry days title.
+    Then I click the Display questions randomly button.
+    Then I click the Certificate included button.
+    Then I click the Active quiz button.
+    Then I click the Create button.
+    Then I click the Save button.
+    When I verify the text Item added successfully.
 
 
 
