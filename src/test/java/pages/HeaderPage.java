@@ -61,7 +61,8 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//span[text()='Profile']")
     public WebElement profileLinkInHeader;
     public boolean isDisplayedMyProfileLink() {
-    return profileLinkInHeader.isDisplayed();
+        waitForVisibility(profileLinkInHeader);
+        return profileLinkInHeader.isDisplayed();
     }
 
     public boolean isEnabledMyProfileLink() {

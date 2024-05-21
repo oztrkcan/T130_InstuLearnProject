@@ -72,5 +72,40 @@ public class LoginMeetingsPageSteps extends BaseStep{
     public void iClickSaveButton() {
         loginMeetingPage.clickSaveButton();
     }
+    @And("I scroll the Group Meetings on Settings for Meeting Page")
+    public void iScrollTheGroupMeetingsOnSettingsForMeetingPage() {
+        loginMeetingPage.scrolltoGroupMeeting();
+    }
 
+    @And("I enter {int} for Amount and {int} for Discount Rate")
+    public void iEnterForAmountAndForDiscountRate(int amount, int discount) {
+        loginMeetingPage.sendAmountForMeeting(amount);
+        loginMeetingPage.sendDiscountForMeeting(discount);
+    }
+
+    @And("I click Available for In-person meetings Checkbox")
+    public void iClickAvailableForInPersonMeetingsCheckbox() {
+        loginMeetingPage.clickAvailableForInPersonChekbox();
+    }
+
+    @And("I enter {int} for Hourly price")
+    public void iEnterForHourlyPrice(int hourlyPrice) {
+        loginMeetingPage.sendHourlyPrice(hourlyPrice);
+
+    }
+
+    @And("I click Available for group meetings Checkbox")
+    public void iClickAvailableForGroupMeetingsCheckbox() {
+        loginMeetingPage.clickAVailableForGroupMeetingCheckbox();
+    }
+    @And("I send {int} for Minimum {int} for Maximum Student")
+    public void iSendForMinimumForMaximumStudent(int min, int max) {
+        loginMeetingPage.sendMinForStudent(min);
+        loginMeetingPage.sendMaxForStudent(max);
+    }
+
+    @Then("I can click Save button for Group Meeting")
+    public void iCanClickSaveButtonForGroupMeeting() {
+        loginMeetingPage.clickSaveButton();
+    }
 }

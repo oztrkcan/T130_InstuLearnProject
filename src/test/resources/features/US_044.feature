@@ -1,4 +1,4 @@
-
+@wip
 Feature: I would like to have an area on the site where I can view and manage my certificates
 
   Background:
@@ -25,10 +25,16 @@ Feature: I would like to have an area on the site where I can view and manage my
   |   Volleyball Referee      |
   |   education               |
 
-  @mua
+
   Scenario: TC_03_US_044: The  certificates in the list of successful certificates should be able to be viewed, edited, deleted
     And I click Achivement link on Dashboard Sidebar
     And I click toggle Dropdown Menu
     When I click Open Button
     Then I can see the my Certificate
 
+
+  Scenario: TC_04_US_044: The  certificates in the list of successful certificates should be able to be viewed, edited, deleted
+    And I click Completion Certificates link on Dashboard Sidebar
+    And I select as from date "Oct 2023" and as to date "Oct 2025"
+    When I click Show Result
+    Then I see the Course Of My Ceriticates

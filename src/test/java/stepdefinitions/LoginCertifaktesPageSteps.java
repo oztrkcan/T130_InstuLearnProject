@@ -12,14 +12,10 @@ public class LoginCertifaktesPageSteps extends BaseStep{
 
     LoginCertifikatesPage loginCertifikatesPage = new LoginCertifikatesPage(driver);
 
-    @When("i click Certificates Link ond Dashboard Sidebar")
-    public void iClickCertificatesLinkOndDashboardSidebar() {
-        loginCertifikatesPage.clickCertificatesLinkOnDashboardSidebar();
-    }
 
     @Then("I see Achivement Link on Dashboard Sidebar")
     public void iSeeAchivementLinkOnDashboardSidebar() {
-        Assert.assertTrue(loginCertifikatesPage.achivementsLinkonDashboardSidebar.isDisplayed());
+        Assert.assertTrue(loginCertifikatesPage.isDisplayedAchvimnetLinkOnSidabar());
     }
 
     @Then("I see Certificate Validation Link on Dashboard Sidebar")
@@ -79,4 +75,10 @@ public class LoginCertifaktesPageSteps extends BaseStep{
     public void iClickOpenButton() {
         loginCertifikatesPage.clickOpenButton();
     }
+
+    @Then("I see the Course Of My Ceriticates")
+    public void iSeeTheCourseOfMyCeriticates() {
+        Assert.assertFalse(loginCertifikatesPage.isDisplayedyouHaveNoCertificates());
+    }
+
 }

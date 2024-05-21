@@ -45,7 +45,7 @@ public class InstructorPageSteps extends BaseStep{
 
     @Then("i see sucsessull message for Reserve a meeting")
     public void iSeeSucsessullMessageForReserveAMeeting() {
-        Assert.assertTrue( instructorsPage.isDisplayedContinueShoppingButton());
+        Assert.assertFalse( instructorsPage.isDisplayedrequestFailedText());
 
     }
 

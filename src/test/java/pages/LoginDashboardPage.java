@@ -272,4 +272,18 @@ public class LoginDashboardPage extends LoginPage{
         click(settingsLinkOnSidebar);
     }
 
+    //Completion certificates
+    @FindBy(partialLinkText = "Completion Certificates")
+    public WebElement completionCertificateslink;
+    public void clickCompletionCertificatesLink() {
+        click(completionCertificateslink);
+    }
+
+    // Certifcates Link
+    @FindBy(xpath = "//span[text()='Certificates']")
+    public WebElement certificatesLink;
+
+    public void clickCertificatesLink() {
+        click(certificatesLink);
+    }
 }
