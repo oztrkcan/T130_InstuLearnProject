@@ -159,8 +159,8 @@ public class LoginDashboardSteps extends BaseStep{
         loginDashboardPage.isDisplayedMyChart();
     }
 
-    @And("Click on the Quizzes title in the Dashboard.")
-    public void clickOnTheQuizzesTitleInTheDashboard () {
+    @And("I click on the Quizzes title in the Dashboard.")
+    public void iClickOnTheQuizzesTitleInTheDashboard () {
         loginQuizzesPage.quizzesInDashboard.click();
     }
 }
