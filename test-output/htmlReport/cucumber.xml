@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="93.883" tests="8" skipped="0" failures="2" errors="0">
+<testcase classname="Display an area related to points on the home page." name="TC_01_US_011: Displaying the Earn Club Points area on the home page." time="10.848">
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Then I should see the Earn Club Points On Home Page.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Display an area related to points on the home page." name="TC_02_US_011: The Rewards button is displayed and active on the home page." time="12.019">
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Then I should see the Rewards Button On Home Page And Click.................passed
+]]></system-out>
+</testcase>
+<testcase classname="Display an area related to points on the home page." name="TC_03_US_011: The Points Club Button is displayed on the home page." time="8.761">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()='PointsClubButton']&quot;}
+  (Session info: chrome=124.0.6367.208)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [700461b3596c2888c5d0385bcc10c3a4, findElement {using=xpath, value=//*[text()='PointsClubButton']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: /var/folders/j0/lswgzsnd1r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50097}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50097/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 700461b3596c2888c5d0385bcc10c3a4">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='PointsClubButton']"}
+  (Session info: chrome=124.0.6367.208)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [700461b3596c2888c5d0385bcc10c3a4, findElement {using=xpath, value=//*[text()='PointsClubButton']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: /var/folders/j0/lswgzsnd1r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50097}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50097/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 700461b3596c2888c5d0385bcc10c3a4
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.isDisplayed(Unknown Source)
+	at stepdefinitions.HomePageSteps.iScrollThePointsClubButtonOnHomePageAndClick(HomePageSteps.java:192)
+	at ✽.I should see the Points Club Button On Home Page And Click(file:///Users/bahtinurdr/Desktop/T130_InstuLearnProject/src/test/resources/features/US_011.feature:13)
+]]>
+</failure>
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Then I should see the Points Club Button On Home Page And Click.............failed
+]]></system-out>
+</testcase>
+<testcase classname="Display an area related to points on the home page." name="TC_04_US_011: The Earn Club Points Discount Coupon is displayed on the homepage." time="8.602">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()='PointsDiscountCoupon']&quot;}
+  (Session info: chrome=124.0.6367.208)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53ff347eb94b4351594f38f70c183992, findElement {using=xpath, value=//*[text()='PointsDiscountCoupon']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: /var/folders/j0/lswgzsnd1r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50112}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50112/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53ff347eb94b4351594f38f70c183992">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text()='PointsDiscountCoupon']"}
+  (Session info: chrome=124.0.6367.208)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [53ff347eb94b4351594f38f70c183992, findElement {using=xpath, value=//*[text()='PointsDiscountCoupon']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.208, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: /var/folders/j0/lswgzsnd1r7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50112}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50112/devtoo..., se:cdpVersion: 124.0.6367.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 53ff347eb94b4351594f38f70c183992
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.isDisplayed(Unknown Source)
+	at stepdefinitions.HomePageSteps.iScrollTheDiscountCouponOnHomePageAndClick(HomePageSteps.java:200)
+	at ✽.I should see the Discount Coupon On Home Page And Click(file:///Users/bahtinurdr/Desktop/T130_InstuLearnProject/src/test/resources/features/US_011.feature:16)
+]]>
+</failure>
+<system-out><![CDATA[
+Given I am on Home Page as a visitor........................................passed
+Then I should see the Discount Coupon On Home Page And Click................failed
+]]></system-out>
+</testcase>
+<testcase classname="Creating and editing quizzes as an Instructor" name="TC_01_US_025: Login to the site as an Instructor." time="5.525">
+<system-out><![CDATA[
+Given i m on Dashboard with "batuhan.teacher@instulearn.com" email..........passed
+Then I see the Link of My Profile in Dashboard sidebar......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Creating and editing quizzes as an Instructor" name="TC_02_US_025: View the Quizzes title and contents in the Dashboard." time="22.834">
+<system-out><![CDATA[
+Given i m on Dashboard with "batuhan.teacher@instulearn.com" email..........passed
+And I click on the Quizzes title in the Dashboard...........................passed
+Then I click on the New quiz link under the Quizzes heading and go to the relevant page..passed
+Then I click on the List link under the Quizzes heading and go to the relevant page..passed
+Then I click on the Results link under the Quizzes heading and go to the relevant page..passed
+Then I click on the My results link under the Quizzes heading and go to the relevant page..passed
+Then I click on the Not Participated link under the Quizzes heading and go to the relevant page..passed
+]]></system-out>
+</testcase>
+<testcase classname="Creating and editing quizzes as an Instructor" name="TC_03_US_025: Create a new quiz and answers under the New Quiz heading." time="25.053">
+<system-out><![CDATA[
+Given i m on Dashboard with "batuhan.teacher@instulearn.com" email..........passed
+And I click on the Quizzes title in the Dashboard...........................passed
+Then I click on the New quiz link under the Quizzes heading and go to the relevant page..passed
+Then I fill "Quiz 01" the Quiz title........................................passed
+Then I fill "60" the Time title.............................................passed
+Then I fill "2" the Number of attempts title................................passed
+Then I fill "55" the Pass mark title........................................passed
+Then I fill "10" the Expiry days title......................................passed
+Then I click the Display questions randomly button..........................passed
+Then I click the Certificate included button................................passed
+Then I click the Active quiz button.........................................passed
+Then I click the Create button..............................................passed
+Then I click the Save button................................................passed
+When I verify the text Item added successfully..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Creating and editing quizzes as an Instructor" name="TC_04_US_025:" time="0">
+</testcase>
+</testsuite>
