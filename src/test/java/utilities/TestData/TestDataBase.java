@@ -72,6 +72,12 @@ public class TestDataBase {
     public static final String fakeBio = " Deneme okudum, Deneme calistim, Denemeden hoslanirim, Deneme idealim";
     public static final String fakeLocation= "DenemeLocation";
 
+    public static final String fakeRegisterEmail = faker.internet().emailAddress();
+
+
+    // invalid info
+    public static final String invalidEmailForRegister = "ahmetgulmek";
+    public static final String invalidPasswordForRegister = "asdf";
 
 
 }
