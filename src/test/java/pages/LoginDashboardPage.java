@@ -1,8 +1,13 @@
 package pages;
 
+import com.github.javafaker.Faker;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+import utilities.ReusableMethods;
+import utilities.TestData.TestDataBase;
 
 import java.util.List;
 
@@ -285,5 +290,125 @@ public class LoginDashboardPage extends LoginPage{
 
     public void clickCertificatesLink() {
         click(certificatesLink);
+    }
+
+    //Arzu>>>>>>>>Dashboard Instructor menu<<<<<<<<<<<<
+    @FindBy(xpath = "(//span[contains(@class,'font-14 text-dark-blue')])[2]")
+    public WebElement dashboardInstructorLink;
+    @FindBy(xpath = "//a[@href='/panel/manage/instructors/new']")
+    public WebElement instructorNewLink;
+    @FindBy(xpath = "//a[@href='/panel/manage/instructors']")
+    public WebElement instructorListLink;
+    @FindBy(xpath = "//*[@name='email']")
+    public WebElement newPageEmailBox;
+    @FindBy(xpath = "//*[@name='full_name']")
+    public WebElement newPageNameBox;
+    @FindBy(xpath = "//*[@name='password']")
+    public WebElement newPagePasswordBox;
+    @FindBy(xpath = "//*[@name='password_confirmation']")
+    public WebElement newPageRetypePasswordBox;
+    @FindBy(xpath = "//*[@name='mobile']")
+    public WebElement newPagePhoneBox;
+    @FindBy(xpath = "//*[@name='language']")
+    public WebElement newPageLanguageComboBox;
+    @FindBy(xpath = "//*[@name='timezone']")
+    public WebElement newPageTimezoneComboBox;
+    @FindBy(xpath = "(//*[@class='form-group mt-30 d-flex align-items-center justify-content-between'])")
+    public List<WebElement> newPageActiveButtonList;
+    @FindBy(id = "saveData")
+    public WebElement saveButton;
+    @FindBy(xpath = "//*[@class='panel-content']")
+    public WebElement listInstructorPanel;
+    @FindBy(xpath = "//h2[text()='Filter Instructors']")
+    public WebElement filterText;
+    @FindBy(xpath = "(//input[@class='form-control'])")
+    public List<WebElement>filterNameEmailList;
+    @FindBy(xpath = "//select[@name='type']")
+    public WebElement typeDropdownBox;
+    @FindBy(xpath = "//*[.='Show Results']")
+    public WebElement showResult;
+    @FindBy(xpath = "(//*[@class='available'])")
+    public List<WebElement> dayList;
+    @FindBy(xpath = "//*[@name='name']")
+    public WebElement nameTextbox;
+    @FindBy(xpath = "(//*[@class='font-30 text-dark-blue font-weight-bold mt-5'])[1]")
+    public WebElement FilterInstructorCount;
+    LoginCertifikatesPage loginCertifikatesPage=new LoginCertifikatesPage(driver);
+
+
+    public void clickInstructorLink() {click(dashboardInstructorLink);}
+
+    public void CreateNewInstructor() {
+        click(instructorNewLink);
+        Faker faker = new Faker();
+        newPageEmailBox.sendKeys(faker.internet().emailAddress());
+        newPageNameBox.sendKeys("QA Instructor");
+        newPagePasswordBox.sendKeys(TestDataBase.fakePassword);
+        newPageRetypePasswordBox.sendKeys(TestDataBase.fakePassword);
+        newPagePhoneBox.sendKeys(TestDataBase.phoneNumber);
+        ReusableMethods.scrollWithJs(newPageTimezoneComboBox);
+        Select languageOption = new Select(newPageLanguageComboBox);
+        languageOption.getOptions().get(1).click();
+        System.out.println(languageOption.getOptions().get(1).getText());
+        Select timeOption = new Select(newPageTimezoneComboBox);
+        timeOption.selectByVisibleText("Europe/Berlin");
+        for (WebElement secim:newPageActiveButtonList){
+            secim.click();
+            System.out.println(secim.getText());}click(saveButton);}
+
+    public void clickListLink(){click(instructorListLink);}
+    public void isEnabledFilterOption(){
+        Assert.assertTrue(filterText.isDisplayed());
+        Assert.assertTrue(loginCertifikatesPage.fromDate.isEnabled());
+        Assert.assertTrue(loginCertifikatesPage.toDate.isEnabled());
+        for (WebElement list:filterNameEmailList){
+            Assert.assertTrue(list.isEnabled());
+        }
+        Select typeBox=new Select(typeDropdownBox);
+        Assert.assertTrue(typeDropdownBox.isEnabled());
+        Assert.assertTrue(showResult.isEnabled());}
+
+    public void getFromDate2(int day1, String month1){
+        click(loginCertifikatesPage.fromDate);
+        int i = 0;
+        while (!loginCertifikatesPage.monthsAndYearsFromDate.get(i).getText().equalsIgnoreCase(month1)) {
+            click(loginCertifikatesPage.prevFromDate);
+            ReusableMethods.wait(1);
+            if (loginCertifikatesPage.monthsAndYearsFromDate.get(i).getText().equalsIgnoreCase(month1)) {
+                break;
+            }
+            ReusableMethods.wait(1);
+        }
+        for (WebElement day:dayList){
+            if(day.getText().equalsIgnoreCase(Integer.toString(day1))){
+                day.click();
+                ReusableMethods.wait(2);
+                break;
+            }
+        }
+        clickWithJs1(loginCertifikatesPage.applyForFromDate);
+        ReusableMethods.wait(2);
+    }
+
+    public void getToDate2(int day2, String month2){
+        click(loginCertifikatesPage.toDate);
+        int i = 0;
+        while (!loginCertifikatesPage.monthsAndYearToDate.get(i).getText().equalsIgnoreCase(month2)) {
+            click(loginCertifikatesPage.nextForToDate);
+            if (loginCertifikatesPage.monthsAndYearToDate.get(i).getText().equalsIgnoreCase(month2)){
+                break;
+            }
+        }
+        for (WebElement day:dayList){
+            if(day.getText().equalsIgnoreCase(Integer.toString(day2))){
+                day.click();
+                ReusableMethods.wait(2);
+                break;
+            }
+        }
+        clickWithJs1(loginCertifikatesPage.applyToDate);
+    }
+    public void verifyInstructorList(){
+        if (Integer.parseInt(FilterInstructorCount.getText())==0) CreateNewInstructor();
     }
 }
