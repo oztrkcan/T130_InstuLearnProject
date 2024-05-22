@@ -79,5 +79,14 @@ public class TestDataBase {
     public static final String invalidEmailForRegister = "ahmetgulmek";
     public static final String invalidPasswordForRegister = "asdf";
 
+    //Arzu
+    public static final String arzuOrganizationPassword="rihirem890*";
+    public static final String arzuOrganizationEmail="rihirem890@ociun.com";
+
+    public static final String fakePassword="fakePassword123**";
+    public static final String phoneNumber="05412365214";
+
+    public static final String expectedTicketPageUrl="https://qa.instulearn.com/panel/support/tickets";
+
 
 }

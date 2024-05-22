@@ -50,4 +50,9 @@ public class LoginPageSteps {
     public void iMOnDashboardAsAWithEmail(String loginType, String person) {
     loginPage.getLoginrForEveryPerson(loginType,person);
     }
+    //Arzu
+    @Given("i m on Dashboard with organization {string} email")
+    public void iMOnDashboardWithorganizationEmail(String email) {
+        loginPage.getLoginOrganization(email);
+    }
 }

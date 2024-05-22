@@ -8,6 +8,7 @@ import org.junit.Assert;
 import pages.LoginCertifikatesPage;
 import pages.LoginDashboardPage;
 import pages.LoginQuizzesPage;
+import utilities.ReusableMethods;
 
 import static utilities.ReusableMethods.scrollToElementWithAction;
 
@@ -173,6 +174,7 @@ public class LoginDashboardSteps extends BaseStep{
     public void iClickCertificatesLinkOndDashboardSidebar() {
         loginDashboardPage.clickCertificatesLink();
     }
+
     @When("I click financial link on sidebar")
     public void ıClickFinancialLinkOnSidebar() {
         loginDashboardPage.clickFinancialLİnk();
@@ -268,7 +270,61 @@ public class LoginDashboardSteps extends BaseStep{
     @Then("Financial documents list appears on the page")
     public void financialDocumentsListAppearsOnThePage() {
         Assert.assertTrue(loginDashboardPage.isDisplayedfinancialDocument());
+ 
+
+    //<<<<<<<<<<<<<<<<<<<Arzu
+    @Then("Verifies Instructors title is visible in the sidebar")
+    public void verifiesInstructorsTitleIsVisibleInTheSidebar() {
+        Assert.assertTrue(loginDashboardPage.dashboardInstructorLink.isDisplayed());
     }
 
+    @When("Clicks on {string} link")
+    public void clicksOnLink(String link) {loginDashboardPage.clickInstructorLink();}
+
+    @Then("Verifies visibility and activity of Instructor Submenu")
+    public void verifiesVisibilityAndActivityOfInstructorSubmenu() {
+        Assert.assertTrue(loginDashboardPage.instructorNewLink.isDisplayed()&&loginDashboardPage.instructorNewLink.isEnabled());
+        Assert.assertTrue(loginDashboardPage.instructorListLink.isDisplayed()&&loginDashboardPage.instructorListLink.isEnabled());
+    }
+    @When("Clicks on {string} submenu")
+    public void clicksOnSubmenu(String newMenu) {
+        loginDashboardPage.CreateNewInstructor();}
+
+    @When("Clicks on {string} submenu link")
+    public void clicksOnSubmenuLink(String listMenu) {
+        loginDashboardPage.clickListLink();}
+
+    @Then("Verifies {string} panel is displayed")
+    public void verifiesPanelIsDisplayed(String string) {
+        Assert.assertTrue(loginDashboardPage.listInstructorPanel.isDisplayed());}
+
+    @Then("Validates and filters filter elements")
+    public void validatesAndFiltersFilterElements() {
+        loginDashboardPage.isEnabledFilterOption();}
+
+    @When("Clicks {string} button")
+    public void clicksButton(String string) {
+        ReusableMethods.click(loginDashboardPage.showResult);
+        Assert.assertTrue(Integer.parseInt(loginDashboardPage.FilterInstructorCount.getText()) > 0);
+        System.out.println(loginDashboardPage.FilterInstructorCount.getText());
+        //ReusableMethods.bekle(2);
+    }
+
+    @And("Select as from date {int} {string} and as to date {int} {string}")
+    public void selectAsFromDateAndAsToDate(int day1, String month1, int day2, String month2) {
+        loginDashboardPage.getFromDate2(day1,month1);
+        loginDashboardPage.getToDate2(day2,month2);
+
+    }
+
+    @And("Select name {string} for instructor name")
+    public void selectNameForInstructorName(String name) {
+        loginDashboardPage.nameTextbox.sendKeys(name);
+    }
+
+    @And("If the Instructor page is empty click {string} link.")
+    public void ıfTheInstructorPageIsEmptyClickLink(String newLink) {
+        loginDashboardPage.verifyInstructorList();
+    }
 
 }
