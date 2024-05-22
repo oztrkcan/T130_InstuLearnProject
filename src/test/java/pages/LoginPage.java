@@ -65,6 +65,12 @@ public class LoginPage extends HeaderPage{
         enterEmailForLogin(mail);
         clickLoginButtonForLogin();
     }
+//Arzu
 
+    public void getLoginOrganization(String email){
+        loadLoginPage();
+        enterEmailForLogin(email);
+        enterPasswordForLogin(TestDataBase.arzuOrganizationPassword);
+        clickLoginButtonForLogin();}
 
 }
