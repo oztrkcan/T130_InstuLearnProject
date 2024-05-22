@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.LoginCertifikatesPage;
 import pages.LoginDashboardPage;
 import pages.LoginQuizzesPage;
 
@@ -172,4 +173,102 @@ public class LoginDashboardSteps extends BaseStep{
     public void iClickCertificatesLinkOndDashboardSidebar() {
         loginDashboardPage.clickCertificatesLink();
     }
+    @When("I click financial link on sidebar")
+    public void ıClickFinancialLinkOnSidebar() {
+        loginDashboardPage.clickFinancialLİnk();
+
+    }
+
+    @Then("I can see Sales Report")
+    public void ıCanSeeSalesReport() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedfinancialSales());
+        Assert.assertTrue(loginDashboardPage.isEnabledfinancialSales());
+    }
+
+    @Then("I can see Financial Summary")
+    public void ıCanSeeFinancialSummary() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedfinancialSummary());
+        Assert.assertTrue(loginDashboardPage.isEnabledfinancialSummary());
+    }
+
+    @Then("I can see Payout")
+    public void ıCanSeePayout() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedfinancialPayout());
+        Assert.assertTrue(loginDashboardPage.isEnabledfinancialPayout());
+    }
+
+    @Then("I can see Charge Account")
+    public void ıCanSeeChargeAccount() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedfinancialChargeAccount());
+        Assert.assertTrue(loginDashboardPage.isEnabledfinancialChargeAccount());
+    }
+
+    @Then("I can see Subscribe")
+    public void ıCanSeeSubscribe() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedfinancialSubscribes());
+        Assert.assertTrue(loginDashboardPage.isEnabledfinancialSubscribes());
+    }
+    // us27 financial
+    @When("I click Sales link on sidebar")
+    public void ıClickSalesLinkOnSidebar() {
+        loginDashboardPage.clickFinancialSales();
+
+    }
+
+    @Then("I can see  Sales statistics on page")
+    public void ıCanSeeSalesStatisticsOnPage() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedSalesStatistics());
+    }
+
+
+
+
+    @Then("The Courses,Meetings link appears in the sidebar on the dashboard and it is verified th" +
+            "at it is active.")
+    public void theCoursesMeetingsLinkAppearsInTheSidebarOnTheDashboardAndItIsVerifiedThatItIsActive() {
+        Assert.assertTrue(loginDashboardPage.isDisplayeddashboardCoursesLink());;
+        Assert.assertTrue(loginDashboardPage.isEnableddashboardCoursesLink());
+        Assert.assertTrue(loginDashboardPage.isDisplayeddashboardMeetingsLink());
+        Assert.assertTrue(loginDashboardPage.isEnableddashboardMeetingsLink());
+    }
+
+    @Then("The Support link appears in the sidebar on the dashboard and it is verified that it is active.")
+    public void theSupportLinkAppearsInTheSidebarOnTheDashboardAndItIsVerifiedThatItIsActive() {
+        Assert.assertTrue(loginDashboardPage.isDisplayeddashboardSupportLink());
+        Assert.assertTrue(loginDashboardPage.isEnableddashboardSupportLink());
+    }
+
+    @Then("The Notifications,Settings,Log Out link appears in the sidebar on the dashboard and it is verified that it is active.")
+    public void theNotificationsSettingsLogOutLinkAppearsInTheSidebarOnTheDashboardAndItIsVerifiedThatItIsActive() {
+        Assert.assertTrue(loginDashboardPage.isDisplayeddashboardNotificationsLink());
+        Assert.assertTrue(loginDashboardPage.isEnableddashboardNotificationsdLink());
+        Assert.assertTrue(loginDashboardPage.isDisplayeddashboardSettingsLink());
+        Assert.assertTrue(loginDashboardPage.isEnableddashboardSettingsLink());
+        Assert.assertTrue(loginDashboardPage.isDisplayeddashboardLogoutLink());
+        Assert.assertTrue(loginDashboardPage.isEnableddashboardLogoutLink());
+    }
+
+    @Then("Purchased Courses links appear in the Dashboard body section and it is verified that it is active.")
+    public void purchasedCoursesLinksAppearInTheDashboardBodySectionAndItIsVerifiedThatItIsActive() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedPurchases());
+        Assert.assertTrue(loginDashboardPage.isEnabledPurchases());
+    }
+
+    @Then("Meetings links appear in the Dashboard body section and it is verified that it is active.")
+    public void meetingsLinksAppearInTheDashboardBodySectionAndItIsVerifiedThatItIsActive() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedMeetings());
+        Assert.assertTrue(loginDashboardPage.isEnabledMeeting());
+    }
+    @When("Click on the {string} link")
+    public void clickOnTheFinancialSummaryLink() {
+        loginDashboardPage.clickfinancialSummary();
+
+    }
+
+    @Then("Financial documents list appears on the page")
+    public void financialDocumentsListAppearsOnThePage() {
+        Assert.assertTrue(loginDashboardPage.isDisplayedfinancialDocument());
+    }
+
+
 }
