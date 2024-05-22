@@ -15,13 +15,13 @@ public class FooterPageSteps extends BaseStep{
 
     @Then("Verifies visibility of {string} link in footer section and clicks")
     public void verifiesVisibilityOfLinkInFooterSectionAndClicks(String additionalLinks) {
-        //footerPage.clicksAdditionalLinks(additionalLinks);
-        footerPage.additionalLink();
+        footerPage.clicksAdditionalLinks(additionalLinks);
+
     }
 
     @When("Verifies that the opened page is the relevant {string}")
     public void verifiesThatTheOpenedPageIsTheRelevant(String url) {
-        System.out.println(Driver.getDriver().getCurrentUrl());
+        footerPage.urlAssertion(url);
     }
 
     @And("goes down to the footer section of the page")

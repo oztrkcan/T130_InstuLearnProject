@@ -17,23 +17,19 @@ public class FooterPage extends BasePage{
     List<WebElement> additionalLinks;
 
     public void clicksAdditionalLinks(String additionalLink) {
-        for (WebElement links : additionalLinks) {
-            if (links.getText().contains(additionalLink)) {
-                click(links);
-                wait(3);
-                System.out.println(driver.getCurrentUrl());
+        try {
+            for (WebElement links : additionalLinks) {
+                if (links.getText().contains(additionalLink)) {
+                    click(links);
+                }
             }
-        }
+        }catch (Exception exception){}
+
     }
 
-    public void additionalLink(){
-        for (int i = 0; i < additionalLinks.size(); i++) {
-            additionalLinks.get(i).click();
-        }
-    }
 
     public void urlAssertion(String url) {
-        Assert.assertTrue(driver.getCurrentUrl().contains(url));
+        Assert.assertEquals(url,driver.getCurrentUrl());
     }
 
 
