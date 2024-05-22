@@ -292,6 +292,102 @@ public class LoginDashboardPage extends LoginPage{
         click(certificatesLink);
     }
 
+    @FindBy(xpath = "//span[text()='Financial']")
+    public WebElement financialclick;
+    public boolean isDisplayedfinancialclick(){
+        return financialclick.isDisplayed();
+    }
+    public void clickFinancialLİnk(){
+        scrollWithJs(financialclick);
+        click(financialclick);
+    }
+
+
+
+    @FindBy(xpath = "//a[@href='/panel/financial/sales']")
+    public WebElement financialSales;
+    public void clickFinancialSales(){
+        click(financialSales);
+    }
+    public boolean isDisplayedfinancialSales(){
+        return financialSales.isDisplayed();
+    }
+    public boolean isEnabledfinancialSales() {
+        return financialSales.isEnabled();
+    }
+
+
+    @FindBy(xpath = "//a[@href='/panel/financial/summary']")
+    public WebElement financialSummary;
+    public boolean isDisplayedfinancialSummary(){
+        return financialSummary.isDisplayed();
+    }
+    public boolean isEnabledfinancialSummary() {
+        return financialSummary.isEnabled();
+    }
+
+    @FindBy(xpath = "//a[@href='/panel/financial/payout']")
+    public  WebElement financialPayout;
+    public boolean isDisplayedfinancialPayout(){
+        return financialPayout.isDisplayed();
+    }
+    public boolean isEnabledfinancialPayout() {
+        return financialPayout.isEnabled();
+    }
+    @FindBy(xpath = "//a[@href='/panel/financial/account']")
+    public WebElement financialChargeAccount;
+    public boolean isDisplayedfinancialChargeAccount(){
+        return financialChargeAccount.isDisplayed();
+    }
+    public boolean isEnabledfinancialChargeAccount() {
+        return financialChargeAccount.isEnabled();
+    }
+
+    @FindBy(xpath = "//a[@href='/panel/financial/subscribes']")
+    public WebElement financialSubscribes;
+    public boolean isDisplayedfinancialSubscribes(){
+        return financialSubscribes.isDisplayed();
+    }
+    public boolean isEnabledfinancialSubscribes() {
+        return financialSubscribes.isEnabled();
+    }
+
+    //US27
+    @FindBy(xpath = "//h2[text()='Sales statistics']")
+    public WebElement salesStatistics;
+    public boolean isDisplayedSalesStatistics(){
+        return salesStatistics.isDisplayed();
+    }
+    @FindBy(xpath = "//a[@href=' /panel/webinars/purchases ']")
+    public WebElement dashbordPurchases;
+    public boolean isDisplayedPurchases(){
+        return dashbordPurchases.isDisplayed();
+    }
+    public boolean isEnabledPurchases(){
+        return dashbordPurchases.isEnabled();
+    }
+    @FindBy(xpath = "//a[@href=' /panel/meetings/reservation ']")
+    public WebElement dashboardMeeting;
+    public boolean isDisplayedMeetings(){
+        return dashboardMeeting.isDisplayed();
+    }
+    public boolean isEnabledMeeting(){
+        return dashboardMeeting.isEnabled();
+    }
+
+    public void clickfinancialSummary(){
+        click(financialSummary);
+    }
+    @FindBy(xpath = "//div[contains(@class,'panel-sidebar pt-50')]/following-sibling::div[1]")
+    public WebElement financialDocument;
+    public boolean isDisplayedfinancialDocument(){
+        return financialDocument.isDisplayed();
+    }
+
+
+
+
+
     //Arzu>>>>>>>>Dashboard Instructor menu<<<<<<<<<<<<
     @FindBy(xpath = "(//span[contains(@class,'font-14 text-dark-blue')])[2]")
     public WebElement dashboardInstructorLink;
@@ -411,4 +507,5 @@ public class LoginDashboardPage extends LoginPage{
     public void verifyInstructorList(){
         if (Integer.parseInt(FilterInstructorCount.getText())==0) CreateNewInstructor();
     }
+
 }
