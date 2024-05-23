@@ -395,7 +395,7 @@ public class LoginDashboardPage extends LoginPage{
 
 
     //Arzu>>>>>>>>Dashboard Instructor menu<<<<<<<<<<<<
-    @FindBy(xpath = "(//span[contains(@class,'font-14 text-dark-blue')])[2]")
+    @FindBy(xpath = "(//*[@class='font-14 text-dark-blue font-weight-500'])[2]")
     public WebElement dashboardInstructorLink;
     @FindBy(xpath = "//a[@href='/panel/manage/instructors/new']")
     public WebElement instructorNewLink;
@@ -415,10 +415,11 @@ public class LoginDashboardPage extends LoginPage{
     public WebElement newPageLanguageComboBox;
     @FindBy(xpath = "//*[@name='timezone']")
     public WebElement newPageTimezoneComboBox;
-    @FindBy(xpath = "(//*[@class='form-group mt-30 d-flex align-items-center justify-content-between'])")
+    @FindBy(xpath = "(//*[@class='cursor-pointer input-label'])")
     public List<WebElement> newPageActiveButtonList;
     @FindBy(id = "saveData")
     public WebElement saveButton;
+    //(//*[@type='button'])[5]
     @FindBy(xpath = "//*[@class='panel-content']")
     public WebElement listInstructorPanel;
     @FindBy(xpath = "//h2[text()='Filter Instructors']")
@@ -435,6 +436,9 @@ public class LoginDashboardPage extends LoginPage{
     public WebElement nameTextbox;
     @FindBy(xpath = "(//*[@class='font-30 text-dark-blue font-weight-bold mt-5'])[1]")
     public WebElement FilterInstructorCount;
+    @FindBy(xpath = "(//*[@class='section-title'])[3]")
+    public WebElement instructorListText;
+
     LoginCertifikatesPage loginCertifikatesPage=new LoginCertifikatesPage(driver);
 
 
@@ -444,10 +448,11 @@ public class LoginDashboardPage extends LoginPage{
         click(instructorNewLink);
         Faker faker = new Faker();
         newPageEmailBox.sendKeys(faker.internet().emailAddress());
-        newPageNameBox.sendKeys("QA Instructor");
+        newPageNameBox.sendKeys("Instructor");
         newPagePasswordBox.sendKeys(TestDataBase.fakePassword);
         newPageRetypePasswordBox.sendKeys(TestDataBase.fakePassword);
-        newPagePhoneBox.sendKeys(TestDataBase.phoneNumber);
+        newPagePhoneBox.sendKeys(faker.phoneNumber().subscriberNumber(11));
+        ReusableMethods.wait(2);
         ReusableMethods.scrollWithJs(newPageTimezoneComboBox);
         Select languageOption = new Select(newPageLanguageComboBox);
         languageOption.getOptions().get(1).click();
@@ -456,7 +461,10 @@ public class LoginDashboardPage extends LoginPage{
         timeOption.selectByVisibleText("Europe/Berlin");
         for (WebElement secim:newPageActiveButtonList){
             secim.click();
-            System.out.println(secim.getText());}click(saveButton);}
+            ReusableMethods.wait(2);
+            System.out.println(secim.getText());}
+        click(saveButton);
+    }
 
     public void clickListLink(){click(instructorListLink);}
     public void isEnabledFilterOption(){
