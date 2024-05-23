@@ -1,4 +1,4 @@
-@arzu
+
 Feature:Check instructor menu and sub-menus on the dashboard
 
   Scenario:TC_01_US_020:View the Instructor menu and submenus
@@ -19,7 +19,7 @@ Feature:Check instructor menu and sub-menus on the dashboard
     Then Verifies "Instructors" panel is displayed
     Then Validates and filters filter elements
     And Select as from date 01 "May 2024" and as to date 01 "May 2025"
-    And Select name "Instructor SDET" for instructor name
+    And Select name "Instructor" for instructor name
     When Clicks "show result" button
     And If the Instructor page is empty click "New" link.
 

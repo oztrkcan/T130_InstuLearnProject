@@ -207,6 +207,8 @@ public class LoginDashboardSteps extends BaseStep{
     @When("Clicks {string} button")
     public void clicksButton(String string) {
         ReusableMethods.click(loginDashboardPage.showResult);
+        ReusableMethods.scrollWithJs(loginDashboardPage.instructorListText);
+        ReusableMethods.wait(2);
         Assert.assertTrue(Integer.parseInt(loginDashboardPage.FilterInstructorCount.getText()) > 0);
         System.out.println(loginDashboardPage.FilterInstructorCount.getText());
         //ReusableMethods.bekle(2);
