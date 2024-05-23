@@ -327,4 +327,14 @@ public class LoginDashboardSteps extends BaseStep{
         loginDashboardPage.verifyInstructorList();
     }
 
+    @Then("I see List Link on Dashboard Sidebar")
+    public void iSeeListLinkOnDashboardSidebar() {
+        loginDashboardPage.isDisplayedListLinkOnSidevar();
+    }
+    @When("I click List Link on Sidebar")
+    public void iClickListLinkOnSidebar() {
+        loginDashboardPage.clickListLinkOnSidebar();
+    }
+
+
 }

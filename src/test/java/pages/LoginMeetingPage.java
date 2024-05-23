@@ -202,6 +202,7 @@ public class LoginMeetingPage extends LoginDashboardPage{
     public WebElement groupMeetingCheckbox;
 
     public void clickAVailableForGroupMeetingCheckbox() {
+        scrollWithJs(groupMeetingCheckbox);
         click(groupMeetingCheckbox);
     }
 

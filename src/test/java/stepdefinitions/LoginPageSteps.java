@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 import utilities.TestData.TestDataBase;
 
-public class LoginPageSteps {
-   WebDriver driver = Driver.getDriver();
+public class LoginPageSteps extends BaseStep{
+
     LoginPage loginPage = new LoginPage(driver);
 
     @Given("i click on login link on Login page")

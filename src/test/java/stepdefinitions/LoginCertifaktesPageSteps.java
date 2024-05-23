@@ -80,5 +80,34 @@ public class LoginCertifaktesPageSteps extends BaseStep{
     public void iSeeTheCourseOfMyCeriticates() {
         Assert.assertFalse(loginCertifikatesPage.isDisplayedyouHaveNoCertificates());
     }
+    @Then("I can see the Certificate Statistics")
+    public void iCanSeeTheCertificateStatistics() {
+        Assert.assertTrue(loginCertifikatesPage.isDisplayedCertificateStatistics());
+    }
+    @When("I click Show Result for Certificates List")
+    public void iClickShowResultForCertificatesList() {
+        loginCertifikatesPage.clickShowResult();
+    }
+
+    @Then("I can see the list Of Certificates")
+    public void iCanSeeTheListOfCertificates() {
+        Assert.assertFalse(loginCertifikatesPage.isDisplayedListOfCertificates());
+    }
+
+    @When("I click Certificates Validation Link on Sidebar")
+    public void iClickCertificatesValidationLinkOnSidebar() {
+        loginCertifikatesPage.clickCertificateValidationLink();
+    }
+
+    @Then("I can see the Certificate Validation title on the page")
+    public void iCanSeeTheCertificateValidationTitleOnThePage() {
+        Assert.assertTrue(loginCertifikatesPage.isDisplayedCertificateValidation());
+    }
+
+
+    @Then("I send Id {string} for Certificate validation")
+    public void iSendIdForCertificateValidation(String id) {
+        loginCertifikatesPage.sendIdForValidation(id);
+    }
 
 }

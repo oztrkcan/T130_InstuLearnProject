@@ -1,6 +1,7 @@
 package pages;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -261,6 +262,11 @@ public class LoginDashboardPage extends LoginPage{
         click(myReservationsLinkOnSidebar);
     }
 
+    public boolean isDisplayedMyReservationLInk(){
+        waitForVisibility(myReservationsLinkOnSidebar);
+        return myReservationsLinkOnSidebar.isDisplayed();
+    }
+
     // Requests Link
     @FindBy(xpath = "//*[.='Requests']")
     public WebElement requestLinkOnSidebar;
@@ -508,4 +514,15 @@ public class LoginDashboardPage extends LoginPage{
         if (Integer.parseInt(FilterInstructorCount.getText())==0) CreateNewInstructor();
     }
 
+    // List Link
+    @FindBy(xpath = "//a[@href='/panel/certificates']")
+    public WebElement listLinkOnSidebar;
+
+    public boolean isDisplayedListLinkOnSidevar() {
+        waitForVisibility(listLinkOnSidebar);
+        return listLinkOnSidebar.isDisplayed();
+    }
+    public void clickListLinkOnSidebar() {
+        click(listLinkOnSidebar);
+    }
 }

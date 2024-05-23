@@ -13,6 +13,14 @@ public class LoginCertifikatesPage extends LoginPage{
         super(driver);
     }
 
+    ///////////////////////////////////----------------List-----------////////////////////////////////////////////////
+    // No Certificates Text
+    @FindBy(className = "text-dark-blue")
+    public WebElement noCertificatesText;
+    public boolean isDisplayedListOfCertificates() {
+        waitForVisibility(noCertificatesText);
+        return noCertificatesText.isDisplayed();
+    }
 
     ///////////////////////////////////----------------Achievements-----------/////////////////////////////////////////
 
@@ -144,6 +152,26 @@ public class LoginCertifikatesPage extends LoginPage{
     @FindBy(linkText = "Certificate Validation")
     public WebElement certificateValidationLinkOnSidebar;
 
+    @FindBy(xpath = "//*[.='Certificate Validation']")
+    public WebElement certificateVAlidationText;
+
+    public void clickCertificateValidationLink() {
+        click(certificateValidationLinkOnSidebar);
+    }
+
+    public boolean isDisplayedCertificateValidation() {
+        waitForVisibility(certificateVAlidationText);
+        return certificateVAlidationText.isDisplayed();
+    }
+
+    // Id
+    @FindBy(id = "certificate_id")
+    public WebElement certificateId;
+
+    public void sendIdForValidation(String  id) {
+        sendKeys(certificateId, id);
+    }
+
 
 
 
@@ -164,6 +192,15 @@ public class LoginCertifikatesPage extends LoginPage{
         }catch (Exception e) {}
         return youHaveNoCertificatesText.isDisplayed();
     }
+    // Certificates statistics
+    @FindBy(css = "[class='section-title']")
+    public WebElement certificatesStatistics;
+
+    public boolean isDisplayedCertificateStatistics() {
+        waitForVisibility(certificatesStatistics);
+        return certificatesStatistics.isDisplayed();
+    }
+
 
 
 }
