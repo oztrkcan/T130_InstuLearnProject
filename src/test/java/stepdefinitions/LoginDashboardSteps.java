@@ -270,7 +270,7 @@ public class LoginDashboardSteps extends BaseStep{
     @Then("Financial documents list appears on the page")
     public void financialDocumentsListAppearsOnThePage() {
         Assert.assertTrue(loginDashboardPage.isDisplayedfinancialDocument());
- 
+    }
 
     //<<<<<<<<<<<<<<<<<<<Arzu
     @Then("Verifies Instructors title is visible in the sidebar")

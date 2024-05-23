@@ -35,12 +35,10 @@ public class InstructorsPage extends BasePage{
             if (!day.getAttribute("class").contains("disabled")){
                 click(day);
                 waitForVisibility(pickATimeText);
-                if (!timeforReserveMeeting.isEmpty()){
+                if (!timeforReserveMeeting.isEmpty()&!timeforReserveMeeting.getFirst().getAttribute("class").contains("disabled")){
                     click(timeforReserveMeeting.getFirst());
-                }else {
-                    System.out.println("There isnt available time");
+                    break;
                 }
-                break;
             }
         }
     }
