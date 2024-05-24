@@ -76,6 +76,10 @@ public class LoginCertifikatesPage extends LoginPage{
     @FindBy(xpath = "(//button[text()='Apply'])[2]")
     public WebElement applyToDate;
 
+    // one
+    @FindBy(xpath = "//td[.='1']")
+    public List<WebElement> one;
+
     public void clickToDate(){
         click(toDate);
     }
@@ -89,14 +93,32 @@ public class LoginCertifikatesPage extends LoginPage{
                 break;
             }
         }
+                for (WebElement on : one){
+                    if (on.isEnabled()){
+                        click(on);
+                        break;
+                    }
+                }
                 clickWithJs1(applyForFromDate);
+
     }
+
+    // Fifteen
+    @FindBy(xpath = "//td[.='15']")
+    public List<WebElement> fifteens;
+
     public void getToDate(String date){
         clickToDate();
         int i = 0;
         while (!monthsAndYearToDate.get(i).getText().equalsIgnoreCase(date)) {
             click(nextForToDate);
             if (monthsAndYearToDate.get(i).getText().equalsIgnoreCase("Feb 2027")) {
+                break;
+            }
+        }
+        for (WebElement fifteen: fifteens){
+            if (fifteen.isDisplayed()){
+                click(fifteen);
                 break;
             }
         }
