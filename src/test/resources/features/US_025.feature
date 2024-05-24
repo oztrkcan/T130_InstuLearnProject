@@ -28,12 +28,3 @@ Feature: Creating and editing quizzes as an Instructor
     Then I click the Create button.
     Then I click the Save button.
     When I verify the text Item added successfully.
-
-
-
-
-
-
-
-  Scenario: TC_04_US_025:
-    Then
