@@ -2,14 +2,11 @@
 ### TEAM 1
 ###
 ***
-
 1. Resources paketi altindaki Feature isimleri US_001 seklinde olmalidir.
 3. Locate alinan element nerenin elementi oldugu aciklama satiri ile aciklanmali
    || orn:  homepage> loginLink>email text box ||
 4. Base class'ina extends yapilacak.
-
-
-
+   
 <br/>
 
 ### Git
