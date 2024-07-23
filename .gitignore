@@ -7,9 +7,6 @@ target/
 !**/src/test/java/hooks/
 src/test/java/driver/
 
-
-
-
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
